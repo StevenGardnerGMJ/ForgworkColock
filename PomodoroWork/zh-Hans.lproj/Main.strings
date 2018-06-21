@@ -1,0 +1,168 @@
+
+/* Class = "UILabel"; text = "5 个"; ObjectID = "1H8-7s-WrP"; */
+"1H8-7s-WrP.text" = "5 个";
+
+/* Class = "UILabel"; text = "肩宽"; ObjectID = "3q6-xP-acO"; */
+"3q6-xP-acO.text" = "肩宽";
+
+/* Class = "UILabel"; text = "头围"; ObjectID = "44W-YQ-1YV"; */
+"44W-YQ-1YV.text" = "头围";
+
+/* Class = "UILabel"; text = "20 minutes"; ObjectID = "5c0-ob-FHn"; */
+"5c0-ob-FHn.text" = "20 minutes";
+
+/* Class = "UILabel"; text = "108cm"; ObjectID = "8Z2-d8-bDf"; */
+"8Z2-d8-bDf.text" = "108cm";
+
+/* Class = "UILabel"; text = "67次/min"; ObjectID = "9rN-PQ-J5H"; */
+"9rN-PQ-J5H.text" = "67次/min";
+
+/* Class = "UILabel"; text = "25 minutes"; ObjectID = "9sg-1h-1uo"; */
+"9sg-1h-1uo.text" = "25 minutes";
+
+/* Class = "UILabel"; text = "5 minutes"; ObjectID = "A9r-7e-2Hl"; */
+"A9r-7e-2Hl.text" = "5 minutes";
+
+/* Class = "UILabel"; text = "手指跨度"; ObjectID = "AUX-H0-ZGs"; */
+"AUX-H0-ZGs.text" = "手指跨度";
+
+/* Class = "UILabel"; text = "99cm"; ObjectID = "BHV-P1-oAP"; */
+"BHV-P1-oAP.text" = "99cm";
+
+/* Class = "UILabel"; text = "广告合作"; ObjectID = "BIJ-5c-YCh"; */
+"BIJ-5c-YCh.text" = "广告合作";
+
+/* Class = "UILabel"; text = "59cm"; ObjectID = "BU9-MJ-sgm"; */
+"BU9-MJ-sgm.text" = "59cm";
+
+/* Class = "UILabel"; text = "@E-mail"; ObjectID = "BbX-h7-jfe"; */
+"BbX-h7-jfe.text" = "@E-mail";
+
+/* Class = "UILabel"; text = "21cm"; ObjectID = "CTl-QY-l59"; */
+"CTl-QY-l59.text" = "21cm";
+
+/* Class = "UILabel"; text = "意见反馈"; ObjectID = "CyG-jO-gzr"; */
+"CyG-jO-gzr.text" = "意见反馈";
+
+/* Class = "UILabel"; text = "评价"; ObjectID = "D2t-jT-Rdi"; */
+"D2t-jT-Rdi.text" = "评价";
+
+/* Class = "UILabel"; text = "名言"; ObjectID = "DP1-f6-zbZ"; */
+"DP1-f6-zbZ.text" = "名言";
+
+/* Class = "UIButton"; normalTitle = "停止"; ObjectID = "Dvi-5b-KEU"; */
+"Dvi-5b-KEU.normalTitle" = "停止";
+
+/* Class = "UILabel"; text = "步长"; ObjectID = "FBa-nt-N9x"; */
+"FBa-nt-N9x.text" = "步长";
+
+/* Class = "UITextField"; text = "157斤"; ObjectID = "FGT-jJ-Lb3"; */
+"FGT-jJ-Lb3.text" = "157斤";
+
+/* Class = "UILabel"; text = "版本Version"; ObjectID = "Kop-EG-CDp"; */
+"Kop-EG-CDp.text" = "版本Version";
+
+/* Class = "UILabel"; text = "臂展"; ObjectID = "LCh-Ki-g5x"; */
+"LCh-Ki-g5x.text" = "臂展";
+
+/* Class = "UILabel"; text = "在App Store喷我"; ObjectID = "M3B-vc-5Sv"; */
+"M3B-vc-5Sv.text" = "在App Store喷我";
+
+/* Class = "UILabel"; text = "胸围"; ObjectID = "MFs-nB-KkC"; */
+"MFs-nB-KkC.text" = "胸围";
+
+/* Class = "UILabel"; text = "47cm"; ObjectID = "MPg-CU-zKz"; */
+"MPg-CU-zKz.text" = "47cm";
+
+/* Class = "UILabel"; text = "短时间休息"; ObjectID = "OVi-2R-xMW"; */
+"OVi-2R-xMW.text" = "短时间休息";
+
+/* Class = "UILabel"; text = "172cm"; ObjectID = "Pyb-Ja-cWR"; */
+"Pyb-Ja-cWR.text" = "172cm";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "Qa2-Ga-Dzc"; */
+"Qa2-Ga-Dzc.title" = "设置";
+
+/* Class = "UILabel"; text = "98cm"; ObjectID = "R9o-B0-vbI"; */
+"R9o-B0-vbI.text" = "98cm";
+
+/* Class = "UILabel"; text = "臀围"; ObjectID = "V5M-0k-ebF"; */
+"V5M-0k-ebF.text" = "臀围";
+
+/* Class = "UILabel"; text = "腿长"; ObjectID = "WVj-JZ-Puc"; */
+"WVj-JZ-Puc.text" = "腿长";
+
+/* Class = "UILabel"; text = "身高"; ObjectID = "Zbh-aT-QQ9"; */
+"Zbh-aT-QQ9.text" = "身高";
+
+/* Class = "UILabel"; text = "臂长"; ObjectID = "Zbv-7w-1hM"; */
+"Zbv-7w-1hM.text" = "臂长";
+
+/* Class = "UILabel"; text = "90cm"; ObjectID = "ahE-A1-Q8l"; */
+"ahE-A1-Q8l.text" = "90cm";
+
+/* Class = "UITableViewSection"; headerTitle = "关于作者"; ObjectID = "bq3-Z0-whq"; */
+"bq3-Z0-whq.headerTitle" = "关于作者";
+
+/* Class = "UILabel"; text = "血压"; ObjectID = "cJF-s1-E9X"; */
+"cJF-s1-E9X.text" = "血压";
+
+/* Class = "UILabel"; text = "25:00"; ObjectID = "dMR-1E-6rM"; */
+"dMR-1E-6rM.text" = "25:00";
+
+/* Class = "UITabBarItem"; title = "设置"; ObjectID = "fwp-DC-kje"; */
+"fwp-DC-kje.title" = "设置";
+
+/* Class = "UILabel"; text = "任务目标数"; ObjectID = "gna-68-Y0w"; */
+"gna-68-Y0w.text" = "任务目标数";
+
+/* Class = "UILabel"; text = "172cm"; ObjectID = "l3w-Xe-qGH"; */
+"l3w-Xe-qGH.text" = "172cm";
+
+/* Class = "UILabel"; text = "60cm"; ObjectID = "lAP-Ae-CPg"; */
+"lAP-Ae-CPg.text" = "60cm";
+
+/* Class = "UILabel"; text = "80-120mmHg"; ObjectID = "nTe-vn-f2d"; */
+"nTe-vn-f2d.text" = "80-120mmHg";
+
+/* Class = "UIButton"; normalTitle = "继续"; ObjectID = "oZt-Co-8p3"; */
+"oZt-Co-8p3.normalTitle" = "继续";
+
+/* Class = "UILabel"; text = "体重"; ObjectID = "or6-ub-BPG"; */
+"or6-ub-BPG.text" = "体重";
+
+/* Class = "UILabel"; text = "体重"; ObjectID = "qsg-X0-fH2"; */
+"qsg-X0-fH2.text" = "体重";
+
+/* Class = "UILabel"; text = "长时间休息"; ObjectID = "r1Z-FN-UT0"; */
+"r1Z-FN-UT0.text" = "长时间休息";
+
+/* Class = "UILabel"; text = "联系"; ObjectID = "rj7-T1-G5U"; */
+"rj7-T1-G5U.text" = "联系";
+
+/* Class = "UILabel"; text = "1.1"; ObjectID = "sB8-C2-RN3"; */
+"sB8-C2-RN3.text" = "1.1";
+
+/* Class = "UILabel"; text = "腰围"; ObjectID = "sSl-Zw-AAP"; */
+"sSl-Zw-AAP.text" = "腰围";
+
+/* Class = "UIButton"; normalTitle = "开 始 "; ObjectID = "saT-aI-Yem"; */
+"saT-aI-Yem.normalTitle" = "开 始 ";
+
+/* Class = "UILabel"; text = "80cm"; ObjectID = "skl-G4-Gqg"; */
+"skl-G4-Gqg.text" = "80cm";
+
+/* Class = "UILabel"; text = "工作计时"; ObjectID = "txN-QW-Z61"; */
+"txN-QW-Z61.text" = "工作计时";
+
+/* Class = "UILabel"; text = "心跳"; ObjectID = "uwO-Tv-Opf"; */
+"uwO-Tv-Opf.text" = "心跳";
+
+/* Class = "UITableViewSection"; headerTitle = "一般设置项"; ObjectID = "vYT-Ha-DgM"; */
+"vYT-Ha-DgM.headerTitle" = "一般设置项";
+
+/* Class = "UITabBarItem"; title = "计时"; ObjectID = "yHb-ZA-2ks"; */
+"yHb-ZA-2ks.title" = "计时";
+
+/* Class = "UILabel"; text = "157斤"; ObjectID = "z2k-9q-6nQ"; */
+"z2k-9q-6nQ.text" = "157斤";
