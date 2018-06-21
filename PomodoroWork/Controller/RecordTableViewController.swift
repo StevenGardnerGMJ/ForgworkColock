@@ -80,9 +80,11 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     
     
     var record:String!
+    var recordOld:String!
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         popAnimation()
         record = textField.text!
+        recordOld = textField.text!
         textField.text = ""
         print("textFieldShouldBeginEditing,\(textField.text),\(record)")
         return true
@@ -101,9 +103,12 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         print("textFieldDidEndEditing")
         print("textField.text= \(textField.text),record= \(record),stringN = \(stringN)")
 
-        if (stringN == record) {
+        if (recordOld == record) {
             print("数据相同")
+            textField.text = record
             return
+        } else {
+            recordOld = record
         }
         
         switch nametitleLabel.text! {
