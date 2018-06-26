@@ -86,7 +86,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         record = textField.text!
         recordOld = textField.text!
         textField.text = ""
-        print("textFieldShouldBeginEditing,\(textField.text),\(record)")
+        print("textFieldShouldBeginEditing,\(textField.text!),\(record)")
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -99,9 +99,9 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let stringN = userDefaults.value(forKey: "\(nametitleLabel.text!)") as! String
+//        let stringN = userDefaults.value(forKey: "\(nametitleLabel.text!)") as! String
         print("textFieldDidEndEditing")
-        print("textField.text= \(textField.text),record= \(record),stringN = \(stringN)")
+        print("textField.text= \(textField.text!),record= \(record)")
 
         if (recordOld == record) {
             print("数据相同")
@@ -112,6 +112,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         }
         
         switch nametitleLabel.text! {
+            
         case "体重":
             textField.text = record + "斤"
             userDefaults.set(textField.text, forKey: "体重")
@@ -125,7 +126,17 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
             textField.text = record + "cm"
             userDefaults.set(textField.text, forKey: "\(nametitleLabel.text!)")
         }
+        reloadDataCellText(name: nametitleLabel.text!)
         
+    }
+    
+    func reloadDataCellText(name:String) {
+        //weightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
+       // heightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
+        print("r = \(name),\(userDefaults.value(forKey: "\(name)") as? String)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(name)")
+        cell?.detailTextLabel?.text = userDefaults.value(forKey: "\(name)") as? String
+        tableView.reloadData()
     }
     
     
