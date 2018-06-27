@@ -117,7 +117,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
             updateTimerLabel()
             return
         }
-        print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
+       // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
         
         if pomodoro.state == .default {
             pomodoro.completePomodoro()
@@ -128,7 +128,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         
         stop()
         
-        print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
+       // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
     }
     
     // MARK: -- 点击

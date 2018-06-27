@@ -9,7 +9,7 @@
 import UIKit
 
 class RecordTableViewController: UITableViewController,UITextFieldDelegate {
-    
+    // 14个
     @IBOutlet weak var weightCell: UITableViewCell!
     @IBOutlet weak var heightCell: UITableViewCell!
     
@@ -34,7 +34,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     @IBOutlet weak var 步长cell: UITableViewCell!
     
     @IBOutlet weak var 手指跨度cell: UITableViewCell!
-    // mark ----  头部 -------
+    // mark ----------  头部 -----------------
     @IBOutlet weak var headerView: UIView!
     
     @IBOutlet weak var BackgroundBtn: UIButton!
@@ -43,11 +43,24 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     
     @IBOutlet weak var nametitleLabel: UILabel!
     
+    
+    let userDefaults = UserDefaults.standard
+    
+    let arrayKey = ["体重","身高","腰围","臀围","胸围","头围","肩宽","臂长","腿长","心跳","血压","臂展","步长","手指跨度"]
+    let arrayValue = ["156斤","171cm","100cm","108cm","106cm","61cm","47cm","172cm","97cm","72次/min","80-120mmHg","172cm","90cm","20cm"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
+        let libraryPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+        print("沙盒地址：\(libraryPath)")
+        
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        celluserDefauls()
+       
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +69,36 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     }
 
     // MARK: - Table view data source
+    func celluserDefauls() {
+        
+        if userDefaults.string(forKey: "体重") == nil {
+            for t in 0...13 {
+                let value = arrayValue[t]
+                let key   = arrayKey[t]
+                userDefaults.set(value, forKey: key)
+            }
+        }
+        
+        
+        weightCell.detailTextLabel?.text = userDefaults.string(forKey: "体重")
+        heightCell.detailTextLabel?.text = userDefaults.string(forKey: "身高")
+        腰围cell.detailTextLabel?.text = userDefaults.string(forKey: "腰围")
+        臀围cell.detailTextLabel?.text = userDefaults.string(forKey: "臀围")
+        胸围cell.detailTextLabel?.text = userDefaults.string(forKey: "胸围")
+        头围cell.detailTextLabel?.text = userDefaults.string(forKey: "头围")
+        肩宽cell.detailTextLabel?.text = userDefaults.string(forKey: "肩宽")
+        臂长cell.detailTextLabel?.text = userDefaults.string(forKey: "臂长")
+        腿长cell.detailTextLabel?.text = userDefaults.string(forKey: "腿长")
+        心跳cell.detailTextLabel?.text = userDefaults.string(forKey: "心跳")
+        血压cell.detailTextLabel?.text = userDefaults.string(forKey: "血压")
+        臂展cell.detailTextLabel?.text = userDefaults.string(forKey: "臂展")
+        步长cell.detailTextLabel?.text = userDefaults.string(forKey: "步长")
+        手指跨度cell.detailTextLabel?.text = userDefaults.string(forKey: "手指跨度")
+    }
     
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
 
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,22 +128,22 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         record = textField.text!
         recordOld = textField.text!
         textField.text = ""
-        print("textFieldShouldBeginEditing,\(textField.text!),\(record)")
+//        print("textFieldShouldBeginEditing,\(textField.text!),\(record)")
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         record = textField.text! + string
         
-        print(record, range, string)
+//        print(record, range, string)
         return true
     }
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
 //        let stringN = userDefaults.value(forKey: "\(nametitleLabel.text!)") as! String
-        print("textFieldDidEndEditing")
-        print("textField.text= \(textField.text!),record= \(record)")
+//        print("textFieldDidEndEditing")
+//        print("textField.text= \(textField.text!),record= \(record)")
 
         if (recordOld == record) {
             print("数据相同")
@@ -112,7 +154,6 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         }
         
         switch nametitleLabel.text! {
-            
         case "体重":
             textField.text = record + "斤"
             userDefaults.set(textField.text, forKey: "体重")
@@ -126,24 +167,34 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
             textField.text = record + "cm"
             userDefaults.set(textField.text, forKey: "\(nametitleLabel.text!)")
         }
+        userDefaults.synchronize()
         reloadDataCellText(name: nametitleLabel.text!)
         
     }
     
     func reloadDataCellText(name:String) {
+        
+        celluserDefauls()
+        tableView.reloadData()
         //weightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
        // heightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
-        print("r = \(name),\(userDefaults.value(forKey: "\(name)") as? String)")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(name)")
-        cell?.detailTextLabel?.text = userDefaults.value(forKey: "\(name)") as? String
-        tableView.reloadData()
+//       let detialString = userDefaults.string(forKey: "\(name)")
+//        print("r = \(name),userDefalts = \(detialString)")
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "\(name)")
+//        cell?.detailTextLabel?.text = detialString
+//        print("recordOld = \(recordOld),record = \(record),detailText = \(cell?.detailTextLabel?.text)")
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+        
     }
     
     
     
     
     
-    fileprivate let userDefaults = UserDefaults.standard
+    
     // swift 监测是否使用三方键盘 if 禁用Xbutton键盘
     
     /// 添加动画效果
@@ -157,7 +208,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         animation.duration = CFTimeInterval(1.0)
         animation.isAdditive = true
         animation.repeatCount = 2
-        animation.beginTime = CACurrentMediaTime() + CFTimeInterval(0.8)
+        animation.beginTime = CACurrentMediaTime() + CFTimeInterval(0.01)
         BackgroundBtn.layer.add(animation, forKey: "pop")
         recordTextField.layer.add(animation, forKey: "pop")
     }

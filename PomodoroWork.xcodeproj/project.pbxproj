@@ -25,6 +25,7 @@
 		283CA5D3207B0FF500841608 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5D2207B0FF500841608 /* SettingsManager.swift */; };
 		283CA5D5207B181300841608 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5D4207B181300841608 /* SettingsViewController.swift */; };
 		28422C0820C61A82000C59A4 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28422C0720C61A82000C59A4 /* RecordTableViewController.swift */; };
+		2863D05F20E1F880008226A8 /* Bodyinfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D05E20E1F880008226A8 /* Bodyinfos.swift */; };
 		289092A4208981F200647A21 /* ADP1.png in Resources */ = {isa = PBXBuildFile; fileRef = 289092A3208981F200647A21 /* ADP1.png */; };
 		289A0360207F206700498B1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A035F207F206700498B1D /* TimerViewController.swift */; };
 		28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D22084A61C00A53922 /* HHGifImageOperation.swift */; };
@@ -69,6 +70,7 @@
 		283CA5D2207B0FF500841608 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		283CA5D4207B181300841608 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		28422C0720C61A82000C59A4 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		2863D05E20E1F880008226A8 /* Bodyinfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodyinfos.swift; sourceTree = "<group>"; };
 		289092A3208981F200647A21 /* ADP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADP1.png; sourceTree = "<group>"; };
 		289A035F207F206700498B1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		28B009D22084A61C00A53922 /* HHGifImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHGifImageOperation.swift; sourceTree = "<group>"; };
@@ -166,10 +168,11 @@
 			isa = PBXGroup;
 			children = (
 				289092A3208981F200647A21 /* ADP1.png */,
-				283CA5D2207B0FF500841608 /* SettingsManager.swift */,
 				283CA5D0207B0F9C00841608 /* PickerType.swift */,
+				283CA5D2207B0FF500841608 /* SettingsManager.swift */,
 				283CA5CE207B0EDE00841608 /* Scheduler.swift */,
 				283CA5CC207B0E6700841608 /* Pomodoro.swift */,
+				2863D05E20E1F880008226A8 /* Bodyinfos.swift */,
 				283CA5CA207B0D6A00841608 /* State.swift */,
 				28203C4C2084428E00FFF4AA /* AdWordModel.swift */,
 			);
@@ -358,6 +361,7 @@
 				283CA5C5207B08A900841608 /* RoundedButton.swift in Sources */,
 				28E0304120CE6581006EF014 /* IQKeyboardManager.swift in Sources */,
 				28E0304720CE6581006EF014 /* IQToolbar.swift in Sources */,
+				2863D05F20E1F880008226A8 /* Bodyinfos.swift in Sources */,
 				28E0304620CE6581006EF014 /* IQTitleBarButtonItem.swift in Sources */,
 				283CA5CB207B0D6A00841608 /* State.swift in Sources */,
 				289A0360207F206700498B1D /* TimerViewController.swift in Sources */,
