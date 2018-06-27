@@ -59,9 +59,11 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         celluserDefauls()
+        recordTextField.text = userDefaults.string(forKey: "体重")
        
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -135,15 +137,11 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         
         record = textField.text! + string
         
-//        print(record, range, string)
         return true
     }
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        let stringN = userDefaults.value(forKey: "\(nametitleLabel.text!)") as! String
-//        print("textFieldDidEndEditing")
-//        print("textField.text= \(textField.text!),record= \(record)")
 
         if (recordOld == record) {
             print("数据相同")
@@ -170,6 +168,11 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         userDefaults.synchronize()
         reloadDataCellText(name: nametitleLabel.text!)
         
+    }
+    // 键盘回收
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func reloadDataCellText(name:String) {
