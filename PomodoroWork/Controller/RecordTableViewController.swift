@@ -69,6 +69,8 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
     func celluserDefauls() {
@@ -179,10 +181,11 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         
         celluserDefauls()
         tableView.reloadData()
-        //weightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
-       // heightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
-//       let detialString = userDefaults.string(forKey: "\(name)")
-//        print("r = \(name),userDefalts = \(detialString)")
+// Identifier 进行cell 判断失败， 总是点击第一次修改cell不成功
+// weightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
+// heightCell.textLabel?.text = userDefaults.value(forKey: "体重") as? String
+// let detialString = userDefaults.string(forKey: "\(name)")
+// print("r = \(name),userDefalts = \(detialString)")
 //
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "\(name)")
 //        cell?.detailTextLabel?.text = detialString
@@ -192,13 +195,6 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
 //        }
         
     }
-    
-    
-    
-    
-    
-    
-    // swift 监测是否使用三方键盘 if 禁用Xbutton键盘
     
     /// 添加动画效果
     func popAnimation(){
@@ -227,6 +223,28 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         }, completion: nil
         )
     }
+    
+    // MARK: -------- 保存数据 ---------------
+    // 保存今天的数据
+    func saveTodayData() {
+        var arry = Array<String>()
+        for t in 0...13 {
+            let key   = arrayKey[t]
+            let value = userDefaults.string(forKey: key)
+            arry.append(value!)
+        }
+        let date = currentTodayDateKey
+        print(date)
+        userDefaults.set(arry, forKey: date)
+    }
+    ///  日期-数据格式  2018-06-28
+    fileprivate var currentTodayDateKey: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: Date())
+    }
+    
+    // 日历记录  用图表显示
     
        
     

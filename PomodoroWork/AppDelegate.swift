@@ -34,13 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         print("didReceiveLocalNotification")
-  timerViewController.presentAlertFromNotification(notification)
+        timerViewController.presentAlertFromNotification(notification)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+         print("结束App-A")
+        let recodeVC = RecordTableViewController()
+        recodeVC.saveTodayData()
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
