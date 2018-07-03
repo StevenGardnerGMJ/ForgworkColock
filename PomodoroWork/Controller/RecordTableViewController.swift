@@ -242,9 +242,12 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: Date())
+      
     }
     
-    // 日历记录  用图表显示
+    // 日历记录 用图表显示 LFLineChart 动态柱状图
+    
+    
     
        
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		280714D9207CD9A40024990D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280714D8207CD9A40024990D /* PickerViewController.swift */; };
+		280ADB8020E9D27200164388 /* LFCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ADB7F20E9D27200164388 /* LFCircleView.swift */; };
+		280ADB8220EA272E00164388 /* LFAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ADB8120EA272E00164388 /* LFAxisView.swift */; };
 		28203C4D2084428E00FFF4AA /* AdWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28203C4C2084428E00FFF4AA /* AdWordModel.swift */; };
 		283CA5AD207A11B600841608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5AC207A11B600841608 /* AppDelegate.swift */; };
 		283CA5AF207A11B600841608 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5AE207A11B600841608 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		280714D8207CD9A40024990D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		280ADB7F20E9D27200164388 /* LFCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCircleView.swift; sourceTree = "<group>"; };
+		280ADB8120EA272E00164388 /* LFAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFAxisView.swift; sourceTree = "<group>"; };
 		28203C4C2084428E00FFF4AA /* AdWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWordModel.swift; sourceTree = "<group>"; };
 		283CA5A9207A11B600841608 /* PomodoroWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283CA5AC207A11B600841608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,9 +190,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2863D06320E65330008226A8 /* LFLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				280ADB7F20E9D27200164388 /* LFCircleView.swift */,
+				280ADB8120EA272E00164388 /* LFAxisView.swift */,
+			);
+			path = LFLineChart;
+			sourceTree = "<group>";
+		};
 		28B009D02084A5F000A53922 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2863D06320E65330008226A8 /* LFLineChart */,
 				28E0302120CE6581006EF014 /* IQKeyboardManagerSwift */,
 				28B009D12084A61C00A53922 /* HHLaunchAdPageHUD */,
 			);
@@ -343,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280ADB8020E9D27200164388 /* LFCircleView.swift in Sources */,
 				28E0303C20CE6581006EF014 /* IQUIView+Hierarchy.swift in Sources */,
 				28E0303920CE6581006EF014 /* IQNSArray+Sort.swift in Sources */,
 				28E0304220CE6581006EF014 /* IQKeyboardReturnKeyHandler.swift in Sources */,
@@ -371,6 +386,7 @@
 				283CA5D3207B0FF500841608 /* SettingsManager.swift in Sources */,
 				28E0303D20CE6581006EF014 /* IQUIViewController+Additions.swift in Sources */,
 				28E0304820CE6581006EF014 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				280ADB8220EA272E00164388 /* LFAxisView.swift in Sources */,
 				28E0304320CE6581006EF014 /* IQTextView.swift in Sources */,
 				28E0304420CE6581006EF014 /* IQBarButtonItem.swift in Sources */,
 				28B009D52084A61C00A53922 /* HHLaunchAdPageHUD.swift in Sources */,
