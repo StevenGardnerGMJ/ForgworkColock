@@ -34,19 +34,10 @@ class LFCircleView: UIView {
         self.layer.borderWidth = borderWidth
     }
     
-//    func setBorderWith(borderWidth:CGFloat) {
-//
-//    }
-//    func setBorderColor(borderColor:UIColor) {
-//
-//    }
+
     
 }
 
 
-//func initWithCenter(center:CGPoint,radius:CGFloat)->LFCircleView! {
-//    super.init()
-//    
-//    return self
-//}
+
 
