@@ -89,16 +89,19 @@ class LFChartLineView: LFAxisView {
 //            NSMutableAttributedString(string: String(format: "%0.2f", value))
 //            String(format: "%0.2f", value)
       
-//            [NSFontAttributeName:NSAttributedStringKey.font
+
         
    
         
-    
-    UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, size.width, 10)];
-    textLabel.font = [UIFont systemFontOfSize:9.f];
-    textLabel.text = [NSString stringWithFormat:@"%.2f",value];
-    textLabel.center = CGPointMake(point_X, point_Y - 12);
-    [self addSubview:textLabel];
+    let rect = CGRect(x: 0, y: 0, width: size.width, height: 10)
+    let textLabel = UILabel.init(frame: rect)
+        
+    textLabel.font = UIFont.systemFont(ofSize: 9)
+    textLabel.text = String(format: "%0.2f", value)
+//        [NSString stringWithFormat:@"%.2f",value];
+    textLabel.center = CGPoint(x: point_X, y:  point_Y - 12.0)
+//        CGPointMake(point_X, point_Y - 12);
+    self.addSubview(textLabel)
     }
     }
     
