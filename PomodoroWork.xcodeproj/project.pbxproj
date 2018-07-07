@@ -10,6 +10,7 @@
 		280714D9207CD9A40024990D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280714D8207CD9A40024990D /* PickerViewController.swift */; };
 		280ADB8020E9D27200164388 /* LFCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ADB7F20E9D27200164388 /* LFCircleView.swift */; };
 		280ADB8220EA272E00164388 /* LFAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ADB8120EA272E00164388 /* LFAxisView.swift */; };
+		280ADB8420EE211C00164388 /* LFLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ADB8320EE211C00164388 /* LFLineChart.swift */; };
 		28203C4D2084428E00FFF4AA /* AdWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28203C4C2084428E00FFF4AA /* AdWordModel.swift */; };
 		283CA5AD207A11B600841608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5AC207A11B600841608 /* AppDelegate.swift */; };
 		283CA5AF207A11B600841608 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5AE207A11B600841608 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		289A0360207F206700498B1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A035F207F206700498B1D /* TimerViewController.swift */; };
 		28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D22084A61C00A53922 /* HHGifImageOperation.swift */; };
 		28B009D52084A61C00A53922 /* HHLaunchAdPageHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D32084A61C00A53922 /* HHLaunchAdPageHUD.swift */; };
+		28CD9FE220EF41F0005685BB /* LFChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD9FE120EF41F0005685BB /* LFChartLineView.swift */; };
 		28E0303920CE6581006EF014 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0302320CE6581006EF014 /* IQNSArray+Sort.swift */; };
 		28E0303A20CE6581006EF014 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0302420CE6581006EF014 /* IQUIScrollView+Additions.swift */; };
 		28E0303B20CE6581006EF014 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E0302520CE6581006EF014 /* IQUITextFieldView+Additions.swift */; };
@@ -55,6 +57,7 @@
 		280714D8207CD9A40024990D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		280ADB7F20E9D27200164388 /* LFCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCircleView.swift; sourceTree = "<group>"; };
 		280ADB8120EA272E00164388 /* LFAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFAxisView.swift; sourceTree = "<group>"; };
+		280ADB8320EE211C00164388 /* LFLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFLineChart.swift; sourceTree = "<group>"; };
 		28203C4C2084428E00FFF4AA /* AdWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWordModel.swift; sourceTree = "<group>"; };
 		283CA5A9207A11B600841608 /* PomodoroWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283CA5AC207A11B600841608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		289A035F207F206700498B1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		28B009D22084A61C00A53922 /* HHGifImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHGifImageOperation.swift; sourceTree = "<group>"; };
 		28B009D32084A61C00A53922 /* HHLaunchAdPageHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLaunchAdPageHUD.swift; sourceTree = "<group>"; };
+		28CD9FE120EF41F0005685BB /* LFChartLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFChartLineView.swift; sourceTree = "<group>"; };
 		28E0302320CE6581006EF014 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		28E0302420CE6581006EF014 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		28E0302520CE6581006EF014 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 			children = (
 				280ADB7F20E9D27200164388 /* LFCircleView.swift */,
 				280ADB8120EA272E00164388 /* LFAxisView.swift */,
+				28CD9FE120EF41F0005685BB /* LFChartLineView.swift */,
+				280ADB8320EE211C00164388 /* LFLineChart.swift */,
 			);
 			path = LFLineChart;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				28E0304020CE6581006EF014 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				283CA5C3207B078400841608 /* EmptyRoundedButton.swift in Sources */,
 				28203C4D2084428E00FFF4AA /* AdWordModel.swift in Sources */,
+				280ADB8420EE211C00164388 /* LFLineChart.swift in Sources */,
 				283CA5C5207B08A900841608 /* RoundedButton.swift in Sources */,
 				28E0304120CE6581006EF014 /* IQKeyboardManager.swift in Sources */,
 				28E0304720CE6581006EF014 /* IQToolbar.swift in Sources */,
@@ -389,6 +396,7 @@
 				280ADB8220EA272E00164388 /* LFAxisView.swift in Sources */,
 				28E0304320CE6581006EF014 /* IQTextView.swift in Sources */,
 				28E0304420CE6581006EF014 /* IQBarButtonItem.swift in Sources */,
+				28CD9FE220EF41F0005685BB /* LFChartLineView.swift in Sources */,
 				28B009D52084A61C00A53922 /* HHLaunchAdPageHUD.swift in Sources */,
 				283CA5C7207B091A00841608 /* EmptyCell.swift in Sources */,
 				28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */,

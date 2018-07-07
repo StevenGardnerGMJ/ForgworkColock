@@ -17,7 +17,7 @@ let XMARKLAB_HEIGHT:CGFloat = 16.0
 let YMARKLAB_TO_TOP:CGFloat = 12.0
 
 class LFAxisView: UIView {
-
+    
     /// Y轴刻度标签
     var  yMarkTitles = NSArray()
     /// X轴刻度标签
@@ -43,9 +43,9 @@ class LFAxisView: UIView {
         super.init(frame: frame)
         axisViewHeight = frame.size.height
         axisViewWidth = frame.size.width
-       let start_X = HORIZON_YMARKLAB_YAXISLINE + YMARKLAB_WIDTH
-       let start_Y = YMARKLAB_HEIGHT / 2.0 + YMARKLAB_TO_TOP
-       self.startPoint = CGPoint(x: start_X, y: start_Y)
+        let start_X = HORIZON_YMARKLAB_YAXISLINE + YMARKLAB_WIDTH
+        let start_Y = YMARKLAB_HEIGHT / 2.0 + YMARKLAB_TO_TOP
+        self.startPoint = CGPoint(x: start_X, y: start_Y)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,13 +55,14 @@ class LFAxisView: UIView {
     
     /// 绘图
     func mapping() {
+        
         if(self.yMarkTitles.count == 1) {
             print("y轴只有一条数据")
-            return;
+            return
         }
         if(self.xMarkTitles.count == 1) {
-            print("x轴只有一条数据");
-            return;
+            print("x轴只有一条数据")
+            return
         }
         // 与x轴平行的网格线的间距
         let height = self.frame.size.height - YMARKLAB_HEIGHT - XMARKLAB_HEIGHT - YMARKLAB_TO_TOP
@@ -95,7 +96,7 @@ class LFAxisView: UIView {
         
         self.drawYGridline()
         self.drawXGridline()
-
+        
     }
     
     /// 更新做标注数据
@@ -157,7 +158,7 @@ class LFAxisView: UIView {
         yAxisLayer.lineWidth = 0.5;
         yAxisLayer.strokeColor = UIColor.red.cgColor
         yAxisLayer.path = yAxisPath.cgPath;
-//        self.layer.addSublayer(yAxisLayer)
+        //        self.layer.addSublayer(yAxisLayer)
     }
     
     //MARK:  --------- X轴 --------------
@@ -176,7 +177,7 @@ class LFAxisView: UIView {
         xAxisLayer.lineWidth = 0.5;
         xAxisLayer.strokeColor = UIColor.red.cgColor
         xAxisLayer.path = xAxisPath.cgPath
-//        self.layer.addSublayer(xAxisLayer)
+        //        self.layer.addSublayer(xAxisLayer)
     }
     
     //mark:  --------  与 Y轴 平行的网格线  ---------
@@ -200,7 +201,7 @@ class LFAxisView: UIView {
             yAxisLayer.lineWidth = 0.5;
             yAxisLayer.strokeColor = UIColor.black.cgColor;
             yAxisLayer.path = yAxisPath.cgPath
-//            self.layer.addSublayer(yAxisPath)
+            //            self.layer.addSublayer(yAxisPath)
         }
     }
     
@@ -216,7 +217,6 @@ class LFAxisView: UIView {
             
             xAxisPath.addLine(to: CGPoint(x: self.startPoint.x + self.xAxis_L, y: curMark_Y + self.startPoint.y))
             
-            
             let xAxisLayer = CAShapeLayer()
             let number1 = NSNumber(value: 1)
             let number2 = NSNumber(value: 1.5)
@@ -225,47 +225,33 @@ class LFAxisView: UIView {
             xAxisLayer.lineWidth = 0.5;
             xAxisLayer.strokeColor = UIColor.black.cgColor;
             xAxisLayer.path = xAxisPath.cgPath
-            self.layer.addSublayer(xAxisLayer)
+//            self.layer.addSublayer(xAxisLayer)
         }
     }
     //mark- 清空视图
-   func clearView() {
-    
-    removeAllSubLabs()
-    removeAllSubLayers()
+    func clearView() {
+        
+        removeAllSubLabs()
+        removeAllSubLayers()
     }
     // mark 清空标签
     func removeAllSubLabs() {
-    
         let subviews = self.subviews as Array<UIView>
-//        [NSArray arrayWithArray:self.subviews];
-    
-    for view in subviews {
-      view.removeFromSuperview()
-//        (view as AnyObject).removeFromSuperview()
-    }
+        for view in subviews {
+            view.removeFromSuperview()
+        }
     }
     
     //mark: 清空网格线
     func removeAllSubLayers() {
-    
         let subLayers = self.layer.sublayers!
-    for layer in subLayers {
-        layer.removeAllAnimations()
-        layer.removeFromSuperlayer()
-        
+        for layer in subLayers {
+            layer.removeAllAnimations()
+            layer.removeFromSuperlayer()
+            
+        }
     }
-    }
-
-
-
-    
-    
-    
-    
-    
-    
-
+ 
 }
 
 
