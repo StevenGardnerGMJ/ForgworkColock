@@ -60,18 +60,13 @@ class LFChartLineView: LFAxisView {
                 let point_Y = self.yAxis_L * CGFloat(1 - percent) + self.startPoint.y;
                 
                 let point = CGPoint(x: point_X, y: point_Y)
-                
-                
                 // 记录各点的坐标方便后边添加渐变阴影 和 点击层视图 等
                 pointArray.append(point)
-                //        addObject:[NSValue valueWithCGPoint:point]];
                 
                 if (i == 0) {
                     pAxisPath.move(to: point)
-                    //        moveToPoint:point];
                 } else {
                     pAxisPath.addLine(to: point)
-                    //        addLineToPoint:point];
                 }
                 
                 let attributeValue = String(format: "%0.2f", value)
@@ -84,8 +79,7 @@ class LFChartLineView: LFAxisView {
                 
                 //            NSAttributedString(attributedString: String(format: "%0.2f", value))
                 //            String(format: "%0.2f", value)
-                
-                
+
                 let rect = CGRect(x: 0, y: 0, width: size.width, height: 10)
                 let textLabel = UILabel.init(frame: rect)
                 
@@ -93,7 +87,6 @@ class LFChartLineView: LFAxisView {
                 textLabel.text = String(format: "%0.2f", value)
                 //        [NSString stringWithFormat:@"%.2f",value];
                 textLabel.center = CGPoint(x: point_X, y:  point_Y - 12.0)
-                //        CGPointMake(point_X, point_Y - 12);
                 self.addSubview(textLabel)
             }
         }
@@ -101,7 +94,6 @@ class LFChartLineView: LFAxisView {
         let  pAxisLayer = CAShapeLayer()
         pAxisLayer.lineWidth = 1.0;
         pAxisLayer.strokeColor = UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1).cgColor
-        //[UIColor colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:1].CGColor;
         pAxisLayer.fillColor = UIColor.clear.cgColor
         pAxisLayer.path = pAxisPath.cgPath
         self.layer.addSublayer(pAxisLayer)
@@ -113,7 +105,6 @@ class LFChartLineView: LFAxisView {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-        //        CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
         gradientLayer.colors = [UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1).cgColor,UIColor.init(white: 1, alpha: 0.1).cgColor]
         //        @[(__bridge id)[UIColor colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:0.8].CGColor,(__bridge id)[UIColor colorWithWhite:1 alpha:0.1].CGColor];
         
@@ -123,25 +114,20 @@ class LFChartLineView: LFAxisView {
         
         let gradientPath = UIBezierPath()
         gradientPath.move(to: CGPoint(x: self.startPoint.x, y: self.yAxis_L + self.startPoint.y))
-        //        moveToPoint:CGPointMake(self.startPoint.x, self.yAxis_L + self.startPoint.y)];
         
         for  i in 0..<pointArray.count {
             let point = pointArray[i]
             gradientPath.addLine(to: point)
-            //        addLineToPoint:[pointArray[i] CGPointValue]];
         }
         
         var endPoint:CGPoint = pointArray.last!
         endPoint = CGPoint(x: endPoint.x, y: self.yAxis_L + self.startPoint.y)
-        //        CGPointMake(endPoint.x, self.yAxis_L + self.startPoint.y);
         gradientPath.addLine(to: endPoint)
-        //        addLineToPoint:endPoint];
+        
         let arc = CAShapeLayer()
         arc.path = gradientPath.cgPath
         gradientLayer.mask = arc;
         self.layer.addSublayer(gradientLayer)
-        //        addSublayer:gradientLayer];
-        
     }
     
     //MARK: -------- 折线上的圆环
@@ -168,8 +154,6 @@ class LFChartLineView: LFAxisView {
     func removeSubviews() {
         
         let subViews = self.subviews as Array<UIView>
-        //        [NSArray arrayWithArray:self.subviews];
-        
         for view in subViews {
             view.removeFromSuperview()
         }
@@ -179,7 +163,6 @@ class LFChartLineView: LFAxisView {
     //MARK: ---------- 移除折线 ----------
     func removeSublayers() {
         let subLayers = self.layer.sublayers!
-        // [NSArray arrayWithArray:self.layer.sublayers];
         for layer in subLayers {
             layer.removeFromSuperlayer()
         }
