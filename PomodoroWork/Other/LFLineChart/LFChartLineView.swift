@@ -108,7 +108,87 @@ class LFChartLineView: LFAxisView {
     }
     
     
+    // MARK:   渐变阴影
+    func drawGradient() {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        //        CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        gradientLayer.colors = [UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1).cgColor,UIColor.init(white: 1, alpha: 0.1).cgColor]
+        //        @[(__bridge id)[UIColor colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:0.8].CGColor,(__bridge id)[UIColor colorWithWhite:1 alpha:0.1].CGColor];
+        
+        gradientLayer.locations = [0.0,1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x:0.0, y:1)
+        
+        let gradientPath = UIBezierPath()
+        gradientPath.move(to: CGPoint(x: self.startPoint.x, y: self.yAxis_L + self.startPoint.y))
+        //        moveToPoint:CGPointMake(self.startPoint.x, self.yAxis_L + self.startPoint.y)];
+        
+        for  i in 0..<pointArray.count {
+            let point = pointArray[i]
+            gradientPath.addLine(to: point)
+            //        addLineToPoint:[pointArray[i] CGPointValue]];
+        }
+        
+        var endPoint:CGPoint = pointArray.last!
+        endPoint = CGPoint(x: endPoint.x, y: self.yAxis_L + self.startPoint.y)
+        //        CGPointMake(endPoint.x, self.yAxis_L + self.startPoint.y);
+        gradientPath.addLine(to: endPoint)
+        //        addLineToPoint:endPoint];
+        let arc = CAShapeLayer()
+        arc.path = gradientPath.cgPath
+        gradientLayer.mask = arc;
+        self.layer.addSublayer(gradientLayer)
+        //        addSublayer:gradientLayer];
+        
+    }
     
+    //MARK: -------- 折线上的圆环
+    func setupCircleViews() {
+        
+        for  i in 0..<pointArray.count {
+            
+            let circleView = LFCircleView().initWithCenter(center: pointArray[i], radius: 4.0)
+            //alloc] initWithCenter:[pointArray[i] CGPointValue] radius:4];
+            circleView.borderColor = UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1)
+            //        colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:1];
+            circleView.borderWidth = 1.0;
+            self.addSubview(circleView)
+        }
+    }
     
+    //MARK:  --- 清空视图 --- 
+    override func clearView() {
+        self.removeSubviews()
+        self.removeSublayers()
+    }
+    
+    //MARK: ------ 移除 点击图层 、圆环 、数值标签 ----
+    func removeSubviews() {
+        
+        let subViews = self.subviews as Array<UIView>
+        //        [NSArray arrayWithArray:self.subviews];
+        
+        for view in subViews {
+            view.removeFromSuperview()
+        }
+        
+    }
+    
+    //MARK: ---------- 移除折线 ----------
+    func removeSublayers() {
+        let subLayers = self.layer.sublayers!
+        // [NSArray arrayWithArray:self.layer.sublayers];
+        for layer in subLayers {
+            layer.removeFromSuperlayer()
+        }
+    }
     
 }
+
+
+
+
+
+
