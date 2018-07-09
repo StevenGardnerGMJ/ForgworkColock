@@ -25,7 +25,8 @@ class LFLineChart: UIView {
     
     let titleLab = UILabel()
     let scrollView = UIScrollView()
-    let chartLineView = 
+    let chartLineView = LFChartLineView()
+    let xMarkTitlesAndValues = Array<Any>()
     
     
     
