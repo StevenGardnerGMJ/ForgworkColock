@@ -9,8 +9,8 @@
 import UIKit
 
 class LFChartLineView: LFAxisView {
-    let valueArray = Array<CGFloat>()
-    let  maxValue = CGFloat()
+    var valueArray = Array<CGFloat>()
+    var  maxValue = CGFloat()
     var  pointArray = Array<CGPoint>()
     
     
