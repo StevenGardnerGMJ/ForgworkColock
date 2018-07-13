@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        print("didReceiveLocalNotification")
+//        print("didReceiveLocalNotification")
         timerViewController.presentAlertFromNotification(notification)
     }
 
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-         print("结束App-A")
+//         print("结束App-A")
         let recodeVC = RecordTableViewController()
         recodeVC.saveTodayData()
         
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        print("applicationWillTerminate")
+//        print("applicationWillTerminate")
         timerViewController.pause()
     }
     
@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let adImageGifPath:String = Bundle.main.path(forResource: "ADP1", ofType: "png")!
         
         HHLaunchAdPageHUD.init(frame: CGRect.init(x: 0, y: 0, width: HHScreenWidth, height: HHScreenHeight), aDduration: 4, aDImageUrl: adImageGifPath, hideSkipButton: false) {
-            print("[AppDelegate]:点了广告图片")
+//            print("[AppDelegate]:点了广告图片")
             UIApplication.shared.openURL(URL.init(string: "http://www.bmw.com.cn/zh/all-models/m-series/m4-coupe/2017/m4-cs.html")!)
           }
     }

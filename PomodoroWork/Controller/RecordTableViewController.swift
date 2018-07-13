@@ -54,7 +54,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
 
         
         let libraryPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0]
-        print("沙盒地址：\(libraryPath)")
+//        print("沙盒地址：\(libraryPath)")
         
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -149,7 +149,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
 
         if (recordOld == record) {
-            print("数据相同")
+//            print("数据相同")
             textField.text = record
             return
         } else {
@@ -237,7 +237,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
             arry.append(value!)
         }
         let date = currentTodayDateKey
-        print(date)
+//        print(date)
         userDefaults.set(arry, forKey: date)
     }
     ///  日期-数据格式  2018-06-28

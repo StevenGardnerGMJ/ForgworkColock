@@ -116,22 +116,22 @@ class Scheduler {
     fileprivate func schedulePomodoro(_ interval: TimeInterval? = nil) {
         let interval = interval ?? TimeInterval(settings.pomodoroLength)
         scheduleNotification(interval,
-                             title: "此阶段任务完成", body: "陛下 是时候休息一下了!")
+                             title: "陛下是时候休息一下!", body: "此阶段任务完成，建议工作时间在90min内 避免过度疲劳")
 //        print("Pomodoro scheduled")
     }
     
     fileprivate func scheduleShortBreak(_ interval: TimeInterval? = nil) {
         let interval = interval ?? TimeInterval(settings.shortBreakLength)
         scheduleNotification(interval,
-                             title: "短暂休息完成", body: "陛下 是时候回去工作了!")
-        print("Short break scheduled")
+                             title: "陛下该回去努力了!", body: "短暂休息完成")
+//        print("Short break scheduled")
     }
     
     fileprivate func scheduleLongBreak(_ interval: TimeInterval? = nil) {
         let interval = interval ?? TimeInterval(settings.longBreakLength)
         scheduleNotification(interval,
-                             title: "长时休息完成", body: "陛下 是时候回去工作了!")
-        print("Long break scheduled")
+                             title: "陛下是时候回去继续努力了!", body: "长时休息完成")
+//        print("Long break scheduled")
     }
     
     fileprivate func scheduleNotification(_ interval: TimeInterval, title: String, body: String) {
@@ -145,7 +145,7 @@ class Scheduler {
         
         fireDate = notification.fireDate
         
-        print("Pomodoro notification scheduled for \(notification.fireDate!)")
+//        print("Pomodoro notification scheduled for \(notification.fireDate!)")
     }
     
 }
