@@ -29,13 +29,6 @@ class LFLineChart: UIView {
     var xMarkTitlesAndValues = Array<Dictionary<String, Any>>()
     
     
-    
-    
-    
-    
-    
-    
-    
     /// 设置折线图显示的数据和对应X坐标轴刻度标签
     ///
     /// - Parameters:
@@ -63,10 +56,10 @@ class LFLineChart: UIView {
         }
         
         for dic in xMarkTitlesAndValues {
-            let titleKey_value = dic["\(titleKey)"]
+            let titleKey_value = dic["\(titleKey)"] as! String
             xMarkTitles.append(titleKey_value)
             //addObject:[dic objectForKey:titleKey]];
-            let valueKey_value = dic["\(valueKey)"]
+            let valueKey_value = dic["\(valueKey)"] as! String
             valueArray.append(valueKey_value)
             //addObject:[dic objectForKey:valueKey]];
         }

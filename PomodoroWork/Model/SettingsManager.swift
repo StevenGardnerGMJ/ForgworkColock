@@ -36,7 +36,7 @@ class SettingsManager {
     }
     // 短休息 默认为 5 min
     var shortBreakLength: Int {
-        get { return userDefaults.object(forKey: Settings.shortBreakLength) as? Int ?? 11 * 60 }
+        get { return userDefaults.object(forKey: Settings.shortBreakLength) as? Int ?? 5 * 60 }
         set { userDefaults.set(newValue, forKey: Settings.shortBreakLength) }
     }
     // 长休息 默认为 20 min
@@ -44,9 +44,9 @@ class SettingsManager {
         get { return userDefaults.object(forKey: Settings.longBreakLength) as? Int ?? 20 * 60 }
         set { userDefaults.set(newValue, forKey: Settings.longBreakLength) }
     }
-    // 目标任务书数 默认为 5 个
+    // 目标任务书数 默认为 16 个
     var targetPomodoros: Int {
-        get { return userDefaults.object(forKey: Settings.targetPomodoros) as? Int ?? 5 }
+        get { return userDefaults.object(forKey: Settings.targetPomodoros) as? Int ?? 16 }
         set {
             userDefaults.set(newValue, forKey: Settings.targetPomodoros)
             notificationCenter.post(name: Notification.Name(rawValue: "targetPomodorosUpdated"), object: self)

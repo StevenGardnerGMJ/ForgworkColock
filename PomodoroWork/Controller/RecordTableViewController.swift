@@ -70,6 +70,9 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func BackToView(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
 
     // MARK: - Table view data source

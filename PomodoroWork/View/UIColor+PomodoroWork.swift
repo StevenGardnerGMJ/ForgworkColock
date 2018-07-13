@@ -17,7 +17,7 @@ extension UIColor {
     
     /// 休息计时
     static var breakColor: UIColor {
-        return UIColor(red: 240/255, green: 90/255, blue: 90/255, alpha: 1)
+        return UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1)
     }
     
 }

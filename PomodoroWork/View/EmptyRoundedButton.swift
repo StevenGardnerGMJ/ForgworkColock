@@ -10,7 +10,7 @@ import UIKit
 
 class EmptyRoundedButton: UIButton {
     
-    let defaultColor = UIColor(red: 240/255, green: 90/255, blue: 90/255, alpha: 1)
+    let defaultColor = UIColor(red: 92/255, green: 184/255, blue: 92/255, alpha: 1)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

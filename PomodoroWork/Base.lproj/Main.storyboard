@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUV-xU-MPj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hZ0-3q-71n">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,7 +24,7 @@
                             <tableViewSection headerTitle="一般设置项" id="vYT-Ha-DgM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="txN-QW-Z61" detailTextLabel="9sg-1h-1uo" style="IBUITableViewCellStyleValue1" id="NpR-TN-Jub">
-                                        <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NpR-TN-Jub" id="5ra-hF-x7S">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
@@ -283,6 +283,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="55" translatesAutoresizingMaskIntoConstraints="NO" id="dMR-1E-6rM">
                                 <rect key="frame" x="36" y="124" width="303" height="110"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Rpj-nB-p12"/>
                                 </constraints>
@@ -306,7 +307,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvi-5b-KEU" customClass="RoundedButton" customModule="PomodoroWork" customModuleProvider="target">
                                 <rect key="frame" x="20.000000000000007" y="254" width="117.66666666666669" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.24323185389999999" blue="0.2301573781" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="w38-Id-AfV"/>
                                 </constraints>
@@ -320,12 +321,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZt-Co-8p3" customClass="EmptyRoundedButton" customModule="PomodoroWork" customModuleProvider="target">
                                 <rect key="frame" x="237.66666666666666" y="254" width="117.33333333333334" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.24323185389999999" blue="0.2301573781" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JCj-jI-grp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="继续">
+                                <state key="normal" title="暂停">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -480,17 +481,17 @@
             </objects>
             <point key="canvasLocation" x="-1699" y="-352"/>
         </scene>
-        <!--Picker View Controller-->
+        <!--时长选择-->
         <scene sceneID="VFV-8g-mST">
             <objects>
-                <tableViewController id="lLq-H6-7yB" customClass="PickerViewController" customModule="PomodoroWork" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lLq-H6-7yB" userLabel="时长选择" customClass="PickerViewController" customModule="PomodoroWork" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OpU-98-h9e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickerCell" id="K39-Pg-EAz">
-                                <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K39-Pg-EAz" id="vUX-8s-8Nk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -509,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="602" y="68"/>
         </scene>
-        <!--Record Table View Controller-->
+        <!--身体记录-->
         <scene sceneID="hcG-EE-2sU">
             <objects>
-                <tableViewController id="aUV-xU-MPj" customClass="RecordTableViewController" customModule="PomodoroWork" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="recordTableViewController" id="aUV-xU-MPj" userLabel="身体记录" customClass="RecordTableViewController" customModule="PomodoroWork" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="DCM-Ys-SCI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,13 +560,26 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czo-Rs-0Fy">
+                                    <rect key="frame" x="8" y="7" width="35" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="WK3-qn-ZOj"/>
+                                        <constraint firstAttribute="height" constant="30" id="p9S-2K-E2i"/>
+                                    </constraints>
+                                    <state key="normal" title="返回"/>
+                                    <connections>
+                                        <action selector="BackToView:" destination="aUV-xU-MPj" eventType="touchUpInside" id="hU4-gF-aSd"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.57254901960000004" green="0.80784313730000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="qsg-X0-fH2" firstAttribute="centerX" secondItem="48S-gu-bUW" secondAttribute="centerX" id="2qn-h8-Q1v"/>
+                                <constraint firstItem="czo-Rs-0Fy" firstAttribute="top" secondItem="48S-gu-bUW" secondAttribute="top" constant="7" id="605-Gd-Lo7"/>
                                 <constraint firstItem="CSa-mM-Z8x" firstAttribute="centerY" secondItem="48S-gu-bUW" secondAttribute="centerY" id="FcX-tB-ZBH"/>
                                 <constraint firstItem="qsg-X0-fH2" firstAttribute="top" secondItem="48S-gu-bUW" secondAttribute="top" constant="78" id="HZU-Ok-jBM"/>
                                 <constraint firstItem="CSa-mM-Z8x" firstAttribute="centerX" secondItem="48S-gu-bUW" secondAttribute="centerX" constant="3.5" id="WrC-YP-vES"/>
+                                <constraint firstItem="czo-Rs-0Fy" firstAttribute="leading" secondItem="48S-gu-bUW" secondAttribute="leading" constant="8" id="nVA-vU-LOh"/>
                                 <constraint firstItem="FGT-jJ-Lb3" firstAttribute="centerX" secondItem="48S-gu-bUW" secondAttribute="centerX" id="pLV-hg-3QT"/>
                                 <constraint firstItem="FGT-jJ-Lb3" firstAttribute="top" secondItem="48S-gu-bUW" secondAttribute="top" constant="114" id="yUm-aA-BAU"/>
                             </constraints>
@@ -893,14 +907,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="手指跨度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AUX-H0-ZGs">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="69.333333333333329" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="11.999999999999998" width="69.333333333333329" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="21cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CTl-QY-l59">
-                                                    <rect key="frame" x="318" y="11.999999999999998" width="41" height="20.333333333333332"/>
+                                                    <rect key="frame" x="319" y="11.999999999999998" width="41" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

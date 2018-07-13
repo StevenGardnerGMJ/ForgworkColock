@@ -11,7 +11,8 @@ import UIKit
 class RoundedButton: UIButton {
     
 //    let defaultColor = UIColor(red: 240/255, green: 90/255, blue: 90/255, alpha: 1)
-    let highlightedColor = UIColor(red: 220/255, green: 70/255, blue: 70/255, alpha: 1)
+    // 修改为绿色
+    let highlightedColor = UIColor(red: 92/255, green: 184/255, blue: 92/255, alpha: 1)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

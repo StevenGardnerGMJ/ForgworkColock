@@ -24,6 +24,8 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var ADWord: UILabel!
     
+    
+    
     // Scheduler表
     fileprivate let scheduler: Scheduler
     fileprivate let pomodoro = Pomodoro.sharedInstance
@@ -63,9 +65,11 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 NotificationCenter.default.addObserver(self,selector:#selector(willEnterForeground),name:NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
         
         buttonContainer.isHidden = true
+        longPress()
         
     }
 
@@ -73,6 +77,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         super.viewWillAppear(animated)
         
         willEnterForeground()
+        
         
     }
     
@@ -121,8 +126,10 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         
         if pomodoro.state == .default {
             pomodoro.completePomodoro()
+            startButton.setTitle("休 息", for: .normal)
             reloadData()
         } else {
+            startButton.setTitle("开 始", for: .normal)
             pomodoro.completeBreak()
         }
         
@@ -132,6 +139,9 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     }
     
     // MARK: -- 点击
+    
+   
+    
    
     @IBAction func togglePaused(_ sender: EmptyRoundedButton) {
         scheduler.paused ? unpause() :pause()
@@ -266,6 +276,34 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     fileprivate func animateUnpaused() {
         pauseButton.setTitle("暂停", for: UIControlState())
     }
+    // 长按 
+    fileprivate func longPress(){
+        print("longpress")
+        timerLabel.isUserInteractionEnabled = true
+        let ges = UILongPressGestureRecognizer(target: self, action: #selector(TimerViewController.handleLongpressGesture))
+        //长按时间为1秒
+        ges.minimumPressDuration = 1.5
+        //所需触摸1次
+        ges.numberOfTouchesRequired = 1
+        timerLabel.addGestureRecognizer(ges)
+        
+    }
+    
+    
+    @objc fileprivate func handleLongpressGesture(sender : UILongPressGestureRecognizer){
+        print("handleLongpressGesture")
+        
+        if sender.state == UIGestureRecognizerState.began{
+            //
+            let storyB = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let recordVC = storyB.instantiateViewController(withIdentifier: "recordTableViewController")
+//            self.navigationController?.present(recordVC, animated: true, completion: nil)
+            self.present(recordVC, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
 
 }
 
@@ -341,6 +379,10 @@ extension TimerViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         return numberOfSections - 1
     }
+    
+   
+
+    
     
 }
 
