@@ -90,7 +90,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         let temp = Int(arc4random()%13)
         weekdayNow = weekdayNow + temp
         
-        print("星期\(weekdayNow)")
+//        print("星期\(weekdayNow)")
         
         if weekdayNow <= 20 {
             ADWord.text = ADwordString[weekdayNow]
@@ -278,7 +278,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     }
     // 长按 
     fileprivate func longPress(){
-        print("longpress")
+//        print("longpress")
         timerLabel.isUserInteractionEnabled = true
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(TimerViewController.handleLongpressGesture))
         //长按时间为1秒
@@ -291,7 +291,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     
     
     @objc fileprivate func handleLongpressGesture(sender : UILongPressGestureRecognizer){
-        print("handleLongpressGesture")
+//        print("handleLongpressGesture")
         
         if sender.state == UIGestureRecognizerState.began{
             //

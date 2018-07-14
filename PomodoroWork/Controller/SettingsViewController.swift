@@ -164,9 +164,9 @@ class SettingsViewController: UITableViewController, PickerViewControllerDelegat
     }
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result.rawValue {
-        case MFMailComposeResult.sent.rawValue:
+        case MFMailComposeResult.sent.rawValue: break
 //            print("发送成功")
-        case MFMailComposeResult.cancelled.rawValue:
+        case MFMailComposeResult.cancelled.rawValue: break
 //            print("发送失败")
         default:
             break
