@@ -282,7 +282,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         timerLabel.isUserInteractionEnabled = true
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(TimerViewController.handleLongpressGesture))
         //长按时间为1秒
-        ges.minimumPressDuration = 1.5
+        ges.minimumPressDuration = 1.0
         //所需触摸1次
         ges.numberOfTouchesRequired = 1
         timerLabel.addGestureRecognizer(ges)

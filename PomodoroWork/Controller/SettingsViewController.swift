@@ -33,7 +33,7 @@ class SettingsViewController: UITableViewController, PickerViewControllerDelegat
         static let appStoreURL = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1378004614&pageNumber=0&sortOrdering=2&mt=8"
         static let homepageURL = "  E-mali: wawasummer@126.com \n 电话: 157-1886-7368  \n QQ:525884052！"
         static let homepageTitle = "广告合作"
-        static let versionURL = "版本1.2"
+        static let versionURL = "版本1.3"
         static let versionURL2 = "简介：<工作计时>将大任务分成小目标，专注工作，逐步完成。\n每完成一个是短时休憩，\n每进行4个时段后为<长时间休息>。"
     }
 

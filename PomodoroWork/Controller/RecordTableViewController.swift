@@ -53,7 +53,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         super.viewDidLoad()
 
         // 路径
-//        let libraryPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+//  let libraryPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0]
 //        print("沙盒地址：\(libraryPath)")
         
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
