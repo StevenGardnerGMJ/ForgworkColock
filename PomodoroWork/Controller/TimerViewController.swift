@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import StoreKit // 1.首先导入支付包
 
 class TimerViewController: UIViewController {
 
@@ -23,7 +24,8 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var ADWord: UILabel!
-    
+    //3.创建内购支付按钮
+    @IBOutlet weak var subscribeBtn: UIButton!
     
     
     // Scheduler表
@@ -69,7 +71,9 @@ class TimerViewController: UIViewController {
 NotificationCenter.default.addObserver(self,selector:#selector(willEnterForeground),name:NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
         
         buttonContainer.isHidden = true
-        longPress()
+        longPress() // 长按弹出记录界面
+        // 4.设置支付服务
+        SKPaymentQueue.default().add(self)
         
     }
 
@@ -138,11 +142,23 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
        // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
     }
     
-    // MARK: -- 点击
+    // MARK: ----- 点击 -------
     
    
     
-   
+    
+    /// - 付费订阅按钮 点击方法
+    @IBAction func subscribeClick(_ sender: UIButton) {
+        // 5.点击按钮的时候判断app是否允许apple支付
+        if SKPaymentQueue.canMakePayments() {
+            print("允许Apple支付")
+            // 6.请求苹果后台商品
+            getRequestAppleProduct()
+        } else {
+            print("不")
+        }
+    }
+    
     @IBAction func togglePaused(_ sender: EmptyRoundedButton) {
         scheduler.paused ? unpause() :pause()
     }
@@ -276,7 +292,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     fileprivate func animateUnpaused() {
         pauseButton.setTitle("暂停", for: UIControlState())
     }
-    // 长按 
+    
     fileprivate func longPress(){
 //        print("longpress")
         timerLabel.isUserInteractionEnabled = true
@@ -380,8 +396,100 @@ extension TimerViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return numberOfSections - 1
     }
     
-   
+}
 
+// MARK: - 对内购进行扩展：
+// 2.设置代理服务
+extension TimerViewController:SKPaymentTransactionObserver,SKProductsRequestDelegate {
+    //7,8,9 请求苹果商品
+    func getRequestAppleProduct(){
+        var product = Array<String>()
+        product = ["com.czchat.CZChat01"]
+        let nsset = NSSet(array: product)
+        // 8.初始化请求
+        let request = SKProductsRequest(productIdentifiers: nsset as! Set<String>)
+        request.delegate = self
+        
+        // 9.开始请求
+        request.start()
+    }
+    
+//10.接收到产品的返回信息,然后用返回的商品信息进行发起购买请求
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        let product = response.products
+        //如果服务器没有产品
+        if product.count == 0 {
+            print("没有购买信息")
+            return
+        }
+        var requestProduct = SKProduct()
+        for pro in product {
+            print("description=\(pro.description)")
+            print("localizedTitle=\(pro.localizedTitle)")
+            print("localizedDescription=\(pro.localizedDescription)")
+            print("price=\(pro.price)")
+            print("productIdentifier=\(pro.productIdentifier)")
+            // 11.如果后台消费条目的ID与我这里需要请求的一样（用于确保订单的正确性
+            if pro.productIdentifier == "com.czchat.CZChat01" {
+                requestProduct = pro
+            }
+        }
+        // 12.发送购买请求
+        let payment = SKPayment(product: requestProduct)
+        SKPaymentQueue.default().add(payment)
+    }
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        //请求失败
+        debugPrint("购买请求失败\(error)")
+    }
+    
+    func requestDidFinish(_ request: SKRequest) {
+        //反馈请求的产品信息结束后
+        print("反馈信息调用结束")
+    }
+// 13.监听购买结果
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for tran in transactions {
+            switch tran.transactionState {
+            case .purchased: print("交易完成")
+            case .purchasing:print("商品添加进列表")
+            case .restored:print("已经购买过商品");SKPaymentQueue.default().finishTransaction(tran)
+            case .failed:print("交易失败");SKPaymentQueue.default().finishTransaction(tran)
+            default:break
+            }
+        }
+    }
+    
+// 14.交易结束,当交易结束后还要去appstore上验证支付信息是否都正确,只有所有都正确后,我们就可以给用户方法我们的虚拟物品了。
+    func completeTransaction(transaction:SKPaymentTransaction) {
+//        let str = String.init(data: transaction., encoding: <#T##String.Encoding#>)
+        let recvURL = Bundle.main.appStoreReceiptURL//是用来获取交易收据的
+        let receiptData = NSData(contentsOf: recvURL!)
+//        let encodeStr = receiptData?.base64EncodedString(options: .endLineWithLineFeed)//进行加密
+        // 储存 收据数据
+    // 已知完成 支付跳转界面到知识
+        
+    }
+    
+    
+    // 提供restore的功能:使用户可以在其他设备上重新存储购买信息,Apple Store生成新的,用于恢复的交易信息
+    // 当之前所有的交易都被恢复时， 就会调用观察者对象的paymentQueueRestoreCompletedTransactionsFinished方法。
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        
+    }
+    
+    
+    /// 添加观察者
+    func addTransactionObserver(){
+        SKPaymentQueue.default().add(self)
+    }
+    /// 删除观察者
+    func removeTransactionObserver(){
+        SKPaymentQueue.default().remove(self)
+    }
+    
+    
+    
     
     
 }

@@ -34,6 +34,9 @@ public let ADwordString:[Int:String] = [
 ]
 
 class AdWordModel {
+    // 长按计时器2秒钟弹出记录体重界面，可以记录体重等身体数据。
+    
+    
     
    /*     1、最可怕的敌人，就是没有坚强的信念。——罗曼·罗兰
     

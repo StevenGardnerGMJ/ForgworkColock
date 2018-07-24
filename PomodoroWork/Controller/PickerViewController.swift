@@ -27,7 +27,7 @@ class PickerViewController: UITableViewController {
         static let pomodoroLength = [1,5,15,25, 30, 35, 45,60,90].map { $0 * 60 }
         static let shortBreakLength = [1,3, 5, 9, 11].map { $0 * 60 }
         static let longBreakLength = [10, 15, 20, 25, 30].map { $0 * 60 }
-        static let targetPomodoros = (2...14).map { $0 }
+        static let targetPomodoros = (2...20).map { $0 }
     }
     
     override func viewDidLoad() {
