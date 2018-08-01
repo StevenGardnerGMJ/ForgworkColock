@@ -232,9 +232,14 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
     func saveTodayData() {
         var arry = Array<String>()
         for t in 0...13 {
-            let key   = arrayKey[t]
-            let value = userDefaults.string(forKey: key)
-            arry.append(value!)
+            let key   = arrayKey[t]// key特定值
+           // value 可能没有值
+            guard let value = userDefaults.string(forKey: key) else {
+                print("空数据，不能进场!")
+                return
+            }
+            
+            arry.append(value)
         }
         let date = currentTodayDateKey
 //        print(date)

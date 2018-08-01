@@ -27,8 +27,10 @@
 		283CA5D1207B0F9C00841608 /* PickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5D0207B0F9C00841608 /* PickerType.swift */; };
 		283CA5D3207B0FF500841608 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5D2207B0FF500841608 /* SettingsManager.swift */; };
 		283CA5D5207B181300841608 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CA5D4207B181300841608 /* SettingsViewController.swift */; };
+		283F291A21086EE900FCD7EC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F291921086EE900FCD7EC /* SubViewController.swift */; };
 		28422C0820C61A82000C59A4 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28422C0720C61A82000C59A4 /* RecordTableViewController.swift */; };
 		2863D05F20E1F880008226A8 /* Bodyinfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D05E20E1F880008226A8 /* Bodyinfos.swift */; };
+		288EB96021103B5500AFB28F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288EB95F21103B5500AFB28F /* StoreKit.framework */; };
 		289092A4208981F200647A21 /* ADP1.png in Resources */ = {isa = PBXBuildFile; fileRef = 289092A3208981F200647A21 /* ADP1.png */; };
 		289A0360207F206700498B1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A035F207F206700498B1D /* TimerViewController.swift */; };
 		28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D22084A61C00A53922 /* HHGifImageOperation.swift */; };
@@ -76,8 +78,10 @@
 		283CA5D0207B0F9C00841608 /* PickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerType.swift; sourceTree = "<group>"; };
 		283CA5D2207B0FF500841608 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		283CA5D4207B181300841608 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		283F291921086EE900FCD7EC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		28422C0720C61A82000C59A4 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
 		2863D05E20E1F880008226A8 /* Bodyinfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodyinfos.swift; sourceTree = "<group>"; };
+		288EB95F21103B5500AFB28F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		289092A3208981F200647A21 /* ADP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADP1.png; sourceTree = "<group>"; };
 		289A035F207F206700498B1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		28B009D22084A61C00A53922 /* HHGifImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHGifImageOperation.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288EB96021103B5500AFB28F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +126,7 @@
 			children = (
 				283CA5AB207A11B600841608 /* PomodoroWork */,
 				283CA5AA207A11B600841608 /* Products */,
+				288EB95E21103B5500AFB28F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +163,7 @@
 				283CA5D4207B181300841608 /* SettingsViewController.swift */,
 				280714D8207CD9A40024990D /* PickerViewController.swift */,
 				28422C0720C61A82000C59A4 /* RecordTableViewController.swift */,
+				283F291921086EE900FCD7EC /* SubViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +210,14 @@
 				280ADB8320EE211C00164388 /* LFLineChart.swift */,
 			);
 			path = LFLineChart;
+			sourceTree = "<group>";
+		};
+		288EB95E21103B5500AFB28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				288EB95F21103B5500AFB28F /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		28B009D02084A5F000A53922 /* Other */ = {
@@ -322,6 +337,11 @@
 					283CA5A8207A11B600841608 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -390,6 +410,7 @@
 				28E0304520CE6581006EF014 /* IQPreviousNextView.swift in Sources */,
 				28E0303E20CE6581006EF014 /* IQUIWindow+Hierarchy.swift in Sources */,
 				28E0303A20CE6581006EF014 /* IQUIScrollView+Additions.swift in Sources */,
+				283F291A21086EE900FCD7EC /* SubViewController.swift in Sources */,
 				283CA5D3207B0FF500841608 /* SettingsManager.swift in Sources */,
 				28E0303D20CE6581006EF014 /* IQUIViewController+Additions.swift in Sources */,
 				28E0304820CE6581006EF014 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
@@ -569,6 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gemaojing.PomodoroWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
