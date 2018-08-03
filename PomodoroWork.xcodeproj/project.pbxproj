@@ -30,7 +30,7 @@
 		283F291A21086EE900FCD7EC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F291921086EE900FCD7EC /* SubViewController.swift */; };
 		28422C0820C61A82000C59A4 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28422C0720C61A82000C59A4 /* RecordTableViewController.swift */; };
 		2863D05F20E1F880008226A8 /* Bodyinfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D05E20E1F880008226A8 /* Bodyinfos.swift */; };
-		288EB96021103B5500AFB28F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288EB95F21103B5500AFB28F /* StoreKit.framework */; };
+		288EB9622112F3A900AFB28F /* Sub1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288EB9612112F3A900AFB28F /* Sub1ViewController.swift */; };
 		289092A4208981F200647A21 /* ADP1.png in Resources */ = {isa = PBXBuildFile; fileRef = 289092A3208981F200647A21 /* ADP1.png */; };
 		289A0360207F206700498B1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A035F207F206700498B1D /* TimerViewController.swift */; };
 		28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D22084A61C00A53922 /* HHGifImageOperation.swift */; };
@@ -81,7 +81,7 @@
 		283F291921086EE900FCD7EC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		28422C0720C61A82000C59A4 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
 		2863D05E20E1F880008226A8 /* Bodyinfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodyinfos.swift; sourceTree = "<group>"; };
-		288EB95F21103B5500AFB28F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		288EB9612112F3A900AFB28F /* Sub1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sub1ViewController.swift; sourceTree = "<group>"; };
 		289092A3208981F200647A21 /* ADP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADP1.png; sourceTree = "<group>"; };
 		289A035F207F206700498B1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		28B009D22084A61C00A53922 /* HHGifImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHGifImageOperation.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				288EB96021103B5500AFB28F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +163,7 @@
 				280714D8207CD9A40024990D /* PickerViewController.swift */,
 				28422C0720C61A82000C59A4 /* RecordTableViewController.swift */,
 				283F291921086EE900FCD7EC /* SubViewController.swift */,
+				288EB9612112F3A900AFB28F /* Sub1ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,7 +215,6 @@
 		288EB95E21103B5500AFB28F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				288EB95F21103B5500AFB28F /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -339,7 +338,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -422,6 +421,7 @@
 				283CA5C7207B091A00841608 /* EmptyCell.swift in Sources */,
 				28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */,
 				28422C0820C61A82000C59A4 /* RecordTableViewController.swift in Sources */,
+				288EB9622112F3A900AFB28F /* Sub1ViewController.swift in Sources */,
 				283CA5D5207B181300841608 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
