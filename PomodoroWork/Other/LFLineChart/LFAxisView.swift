@@ -10,7 +10,7 @@ import UIKit
 
 
 let HORIZON_YMARKLAB_YAXISLINE:CGFloat = 10.0
-let YMARKLAB_WIDTH:CGFloat = 20.0
+let YMARKLAB_WIDTH:CGFloat = 30.0
 let YMARKLAB_HEIGHT:CGFloat = 16.0
 let XMARKLAB_WIDTH:CGFloat = 40.0
 let XMARKLAB_HEIGHT:CGFloat = 16.0
@@ -115,11 +115,10 @@ class LFAxisView: UIView {
             let markLab = UILabel(frame: CGRect(x: 0, y: y, width: YMARKLAB_WIDTH, height: YMARKLAB_HEIGHT))
             
             markLab.textAlignment = .right
-            markLab.font = UIFont.systemFont(ofSize: 12.0)
-            
+            markLab.font = UIFont.systemFont(ofSize: 10.0)
+
             let t = self.yMarkTitles.count - 1 - i
-            let yString = self.yMarkTitles[t] as! String
-            markLab.text = markLab.text! + yString
+            markLab.text = "\(self.yMarkTitles[t])"
             
             // 隐去了y轴上的标签刻度
             self.addSubview(markLab)
@@ -137,7 +136,7 @@ class LFAxisView: UIView {
             
             markLab.textAlignment = .center
             markLab.font = UIFont.systemFont(ofSize: 11.0)
-            markLab.text = (self.xMarkTitles[i] as! String)
+            markLab.text = "\(self.xMarkTitles[i])" // as! String
             self.addSubview(markLab)
         }
     }
@@ -158,7 +157,7 @@ class LFAxisView: UIView {
         yAxisLayer.lineWidth = 0.5;
         yAxisLayer.strokeColor = UIColor.red.cgColor
         yAxisLayer.path = yAxisPath.cgPath;
-        //        self.layer.addSublayer(yAxisLayer)
+        self.layer.addSublayer(yAxisLayer)
     }
     
     //MARK:  --------- X轴 --------------
@@ -177,7 +176,7 @@ class LFAxisView: UIView {
         xAxisLayer.lineWidth = 0.5;
         xAxisLayer.strokeColor = UIColor.red.cgColor
         xAxisLayer.path = xAxisPath.cgPath
-        //        self.layer.addSublayer(xAxisLayer)
+        self.layer.addSublayer(xAxisLayer)
     }
     
     //mark:  --------  与 Y轴 平行的网格线  ---------
@@ -199,9 +198,9 @@ class LFAxisView: UIView {
             
             yAxisLayer.lineDashPattern?.append(contentsOf: array)// 设置线为虚线
             yAxisLayer.lineWidth = 0.5;
-            yAxisLayer.strokeColor = UIColor.black.cgColor;
+            yAxisLayer.strokeColor = UIColor.lightGray.cgColor;
             yAxisLayer.path = yAxisPath.cgPath
-            //            self.layer.addSublayer(yAxisPath)
+            self.layer.addSublayer(yAxisLayer)
         }
     }
     
@@ -223,8 +222,9 @@ class LFAxisView: UIView {
             let array = [number1,number2]
             xAxisLayer.lineDashPattern?.append(contentsOf: array)
             xAxisLayer.lineWidth = 0.5;
-            xAxisLayer.strokeColor = UIColor.black.cgColor;
+            xAxisLayer.strokeColor = UIColor.lightGray.cgColor;
             xAxisLayer.path = xAxisPath.cgPath
+            // 与 X轴 平行的网格线
 //            self.layer.addSublayer(xAxisLayer)
         }
     }

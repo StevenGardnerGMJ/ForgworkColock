@@ -31,6 +31,7 @@
 		28422C0820C61A82000C59A4 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28422C0720C61A82000C59A4 /* RecordTableViewController.swift */; };
 		2863D05F20E1F880008226A8 /* Bodyinfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863D05E20E1F880008226A8 /* Bodyinfos.swift */; };
 		288EB9622112F3A900AFB28F /* Sub1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288EB9612112F3A900AFB28F /* Sub1ViewController.swift */; };
+		288EB96721217F9C00AFB28F /* JJHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288EB96621217F9C00AFB28F /* JJHUD.swift */; };
 		289092A4208981F200647A21 /* ADP1.png in Resources */ = {isa = PBXBuildFile; fileRef = 289092A3208981F200647A21 /* ADP1.png */; };
 		289A0360207F206700498B1D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A035F207F206700498B1D /* TimerViewController.swift */; };
 		28B009D42084A61C00A53922 /* HHGifImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B009D22084A61C00A53922 /* HHGifImageOperation.swift */; };
@@ -82,6 +83,7 @@
 		28422C0720C61A82000C59A4 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
 		2863D05E20E1F880008226A8 /* Bodyinfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodyinfos.swift; sourceTree = "<group>"; };
 		288EB9612112F3A900AFB28F /* Sub1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sub1ViewController.swift; sourceTree = "<group>"; };
+		288EB96621217F9C00AFB28F /* JJHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJHUD.swift; sourceTree = "<group>"; };
 		289092A3208981F200647A21 /* ADP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADP1.png; sourceTree = "<group>"; };
 		289A035F207F206700498B1D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		28B009D22084A61C00A53922 /* HHGifImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHGifImageOperation.swift; sourceTree = "<group>"; };
@@ -219,9 +221,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		288EB96521217F6D00AFB28F /* JJHUD */ = {
+			isa = PBXGroup;
+			children = (
+				288EB96621217F9C00AFB28F /* JJHUD.swift */,
+			);
+			path = JJHUD;
+			sourceTree = "<group>";
+		};
 		28B009D02084A5F000A53922 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				288EB96521217F6D00AFB28F /* JJHUD */,
 				2863D06320E65330008226A8 /* LFLineChart */,
 				28E0302120CE6581006EF014 /* IQKeyboardManagerSwift */,
 				28B009D12084A61C00A53922 /* HHLaunchAdPageHUD */,
@@ -407,6 +418,7 @@
 				283CA5CB207B0D6A00841608 /* State.swift in Sources */,
 				289A0360207F206700498B1D /* TimerViewController.swift in Sources */,
 				28E0304520CE6581006EF014 /* IQPreviousNextView.swift in Sources */,
+				288EB96721217F9C00AFB28F /* JJHUD.swift in Sources */,
 				28E0303E20CE6581006EF014 /* IQUIWindow+Hierarchy.swift in Sources */,
 				28E0303A20CE6581006EF014 /* IQUIScrollView+Additions.swift in Sources */,
 				283F291A21086EE900FCD7EC /* SubViewController.swift in Sources */,
@@ -571,6 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38355BY3GF;
 				INFOPLIST_FILE = PomodoroWork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gemaojing.PomodoroWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38355BY3GF;
 				INFOPLIST_FILE = PomodoroWork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gemaojing.PomodoroWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";

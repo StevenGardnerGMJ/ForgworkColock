@@ -75,7 +75,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         
         buttonContainer.isHidden = true
         longPress() // 长按弹出记录界面
-        
+        setPoppverUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +89,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     
     func ADword() {
         let calendar: Calendar = Calendar(identifier: .gregorian)
-         var comps: DateComponents = DateComponents()
+        var comps: DateComponents = DateComponents()
         comps = calendar.dateComponents([.day, .weekday], from: Date())
         var   weekdayNow = comps.weekday! - 1
 
@@ -144,16 +144,80 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
        // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
     }
     
+    let menuVC = SubViewController()//UIViewController()
+    let w = 80 ,  h = 44
+    
+    
+    func setPoppverUI() {
+        
+        let menus = ["恢复购买","购买"]
+        let maxH  =  menus.count*h
+        
+        menuVC.modalPresentationStyle = .popover
+        menuVC.preferredContentSize = CGSize(width: w, height: maxH)
+        
+        
+        let backRestoreBtn =  UIButton(frame: CGRect(x: 0, y: 0, width: Int(w), height: h))
+        backRestoreBtn.setTitle("恢复购买", for: .normal)
+        backRestoreBtn.setTitleColor(UIColor.black, for: .normal)
+        backRestoreBtn.addTarget(self, action: #selector(restoreClick), for: .touchUpInside)
+        backRestoreBtn.backgroundColor = UIColor.white
+        menuVC.view.addSubview(backRestoreBtn)
+        
+        let line = UIImageView()
+        line.frame = CGRect(x: 0, y: h, width: 80, height: 1)
+        line.backgroundColor = UIColor.lightGray
+        menuVC.view.addSubview(line)
+        
+        
+        let storeBtn = UIButton(frame: CGRect(x: 0, y: h+2, width: Int(w), height: 44))
+        storeBtn.setTitle("购买", for: .normal)
+        storeBtn.setTitleColor(UIColor.black, for: .normal)
+        storeBtn.addTarget(self, action: #selector(purchase), for: .touchUpInside)
+        storeBtn.backgroundColor = UIColor.white
+        menuVC.view.addSubview(storeBtn)
+        
+    }
+
+    
     // MARK: ----- 点击 -------
     
-    
-    
+    func restoreClick() {
+        
+        menuVC.restoreClick() // 体现MVVM设计模式
+        
+    }
+    func purchase() {
+        menuVC.purchase()// 在VM中书写逻辑部分
+    }
     
     
     /// - 付费订阅按钮 点击方法
     @IBAction func subscribeClick(_ sender: UIButton) {
-        let subVC = SubViewController()
-        self.present(subVC, animated: true, completion: nil)
+        
+        print("subscribeClicK 订阅啊。。。")
+
+//        guard let popoverVC = menuVC.popoverPresentationController else {
+//            return
+//        }
+//
+//        popoverVC.backgroundColor = UIColor.white
+//        popoverVC.delegate = self
+//        popoverVC.sourceView = sender
+//        popoverVC.sourceRect = sender.bounds
+//        //        popoverVC.barButtonItem = UIBarButtonItem(customView: btn)
+//        present(menuVC, animated: true, completion: nil)
+
+//        let  subVC = SubViewController()
+//        subVC.getProducts()
+//        self.present(subVC, animated: true, completion: nil)
+        
+        let sub1VC = Sub1ViewController()
+        self.present(sub1VC, animated: true, completion: nil)
+        
+        
+        
+       
     
     }
     
@@ -169,6 +233,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     @IBAction func stop(_ sender: RoundedButton) {
         stop()
     }
+    
     
     func start() {
         scheduler.start()
@@ -320,6 +385,15 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     
 
 }
+
+// 气泡 popoer 效果
+extension TimerViewController:UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}
+
+
 
 
 extension TimerViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

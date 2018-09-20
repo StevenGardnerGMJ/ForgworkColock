@@ -18,6 +18,6 @@ class Bodyinfos {
     // value: 152.5斤
     // date: 日期 array
     // change:改变值 dic
-    //userDafults  key 为日期， value 为数据Array
+    // userDafults  key 为日期， value 为数据Array
 
 }

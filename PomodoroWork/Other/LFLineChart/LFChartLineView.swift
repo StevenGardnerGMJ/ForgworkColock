@@ -9,8 +9,8 @@
 import UIKit
 
 class LFChartLineView: LFAxisView {
-    var valueArray = Array<CGFloat>()
-    var  maxValue = CGFloat()
+    var  valueArray = Array<CGFloat>()
+    var  maxValue   = CGFloat()
     var  pointArray = Array<CGPoint>()
     
     
@@ -30,7 +30,6 @@ class LFChartLineView: LFAxisView {
         
         self.drawChartLine()
         self.drawGradient()
-        
         self.setupCircleViews()
         
     }
@@ -55,7 +54,7 @@ class LFChartLineView: LFAxisView {
             if (CGFloat(self.valueArray[i]) != -1) {
                 let point_X = self.xScaleMarkLEN * CGFloat(i) + self.startPoint.x;
                 //         CGFloat point_X = self.xScaleMarkLEN * i;
-                let value = CGFloat(self.valueArray[i])
+                let value   = CGFloat(self.valueArray[i])
                 let percent = value / self.maxValue;
                 let point_Y = self.yAxis_L * CGFloat(1 - percent) + self.startPoint.y;
                 
@@ -69,17 +68,11 @@ class LFChartLineView: LFAxisView {
                     pAxisPath.addLine(to: point)
                 }
                 
-                let attributeValue = String(format: "%0.2f", value)
-                let range = NSRange.init(attributeValue)
-                let stingV = NSMutableAttributedString(string: attributeValue)
-                stingV.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 9), range: range!)
-                let size = stingV.size()
+                let str =  String(format: "%0.2f", value)//NSString(string: "\(value)")
+       let strAttribute = [NSFontAttributeName:UIFont.systemFont(ofSize: 9.0)]
                 
-                // swift4.0之后使用[NSAttributedStringKey.font: UIFont.systemFont(ofSize: 9)]
+                let size = str.size(attributes: strAttribute)
                 
-                //            NSAttributedString(attributedString: String(format: "%0.2f", value))
-                //            String(format: "%0.2f", value)
-
                 let rect = CGRect(x: 0, y: 0, width: size.width, height: 10)
                 let textLabel = UILabel.init(frame: rect)
                 
@@ -106,8 +99,7 @@ class LFChartLineView: LFAxisView {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         gradientLayer.colors = [UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1).cgColor,UIColor.init(white: 1, alpha: 0.1).cgColor]
-        //        @[(__bridge id)[UIColor colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:0.8].CGColor,(__bridge id)[UIColor colorWithWhite:1 alpha:0.1].CGColor];
-        
+    
         gradientLayer.locations = [0.0,1.0]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x:0.0, y:1)
@@ -136,7 +128,7 @@ class LFChartLineView: LFAxisView {
         for  i in 0..<pointArray.count {
             
             let circleView = LFCircleView().initWithCenter(center: pointArray[i], radius: 4.0)
-            //alloc] initWithCenter:[pointArray[i] CGPointValue] radius:4];
+
             circleView.borderColor = UIColor.init(red: 54/255.0, green: 221/255.0, blue: 235/255.0, alpha: 1)
             //        colorWithRed:54/255.0 green:221/255.0 blue:235/255.0 alpha:1];
             circleView.borderWidth = 1.0;

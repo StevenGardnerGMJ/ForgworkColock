@@ -13,6 +13,9 @@ import StoreKit
 class SubViewController: UIViewController {
     
     var products = [SKProduct]()
+//    let menuVC = UIViewController()
+//    let w = 80//menuVC.view.bounds.width
+//    let h = 44
     
     deinit {
         SKPaymentQueue.default().remove(self)
@@ -22,31 +25,90 @@ class SubViewController: UIViewController {
     // subscribe订阅
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.blue
-        setUI()
+        view.backgroundColor = UIColor.lightGray
+//        setUI()
         getProducts()
+//        setPoppverUI()
     }
     
-   func setUI() {
+//   func setUI() {
+//
+//    let backRestoreBtn =  UIButton(frame: CGRect(x: 60, y: 100, width: 100, height: 30))
+//    backRestoreBtn.setTitle("恢复购买", for: .normal)
+//    backRestoreBtn.setTitleColor(UIColor.black, for: .normal)
+//    backRestoreBtn.addTarget(self, action: #selector(restoreClick), for: .touchUpInside)
+//    backRestoreBtn.backgroundColor = UIColor.white
+//    view.addSubview(backRestoreBtn)
+//
+//    let storeBtn = UIButton(frame: CGRect(x: 30, y: 200, width: 100, height: 30))
+//    storeBtn.setTitle("购买", for: .normal)
+//    storeBtn.setTitleColor(UIColor.black, for: .normal)
+//    storeBtn.addTarget(self, action: #selector(purchase), for: .touchUpInside)
+//    storeBtn.backgroundColor = UIColor.white
+//    view.addSubview(storeBtn)
+//
+//    let popoverBtn =  UIButton(frame: CGRect(x: 260, y: 40, width: 100, height: 30))
+//    popoverBtn.setTitle("popoverBtn", for: .normal)
+//    popoverBtn.setTitleColor(UIColor.black, for: .normal)
+//    popoverBtn.addTarget(self, action: #selector(poppverClick(btn:)), for: .touchUpInside)
+//    popoverBtn.backgroundColor = UIColor.white
+//    view.addSubview(popoverBtn)
+//
+//    }
     
-    let backRestoreBtn =  UIButton(frame: CGRect(x: 60, y: 100, width: 100, height: 30))
-    backRestoreBtn.setTitle("恢复购买", for: .normal)
-    backRestoreBtn.setTitleColor(UIColor.black, for: .normal)
-    backRestoreBtn.addTarget(self, action: #selector(restoreClick), for: .touchUpInside)
-    backRestoreBtn.backgroundColor = UIColor.white
-    view.addSubview(backRestoreBtn)
+//    func setPoppverUI() {
+//
+//        let menus = ["恢复购买","购买"]
+//        let maxH  =  menus.count*h
+//
+//        menuVC.modalPresentationStyle = .popover
+//        menuVC.preferredContentSize = CGSize(width: w, height: maxH)
+//
+//
+//        let backRestoreBtn =  UIButton(frame: CGRect(x: 0, y: 0, width: Int(w), height: h))
+//        backRestoreBtn.setTitle("恢复购买", for: .normal)
+//        backRestoreBtn.setTitleColor(UIColor.black, for: .normal)
+//        backRestoreBtn.addTarget(self, action: #selector(restoreClick), for: .touchUpInside)
+//        backRestoreBtn.backgroundColor = UIColor.white
+//        menuVC.view.addSubview(backRestoreBtn)
+//
+//        let line = UIImageView()
+//        line.frame = CGRect(x: 0, y: h, width: 80, height: 1)
+//        line.backgroundColor = UIColor.lightGray
+//        menuVC.view.addSubview(line)
+//
+//
+//        let storeBtn = UIButton(frame: CGRect(x: 0, y: h+2, width: Int(w), height: 44))
+//        storeBtn.setTitle("购买", for: .normal)
+//        storeBtn.setTitleColor(UIColor.black, for: .normal)
+//        storeBtn.addTarget(self, action: #selector(purchase), for: .touchUpInside)
+//        storeBtn.backgroundColor = UIColor.white
+//        menuVC.view.addSubview(storeBtn)
+//
+//    }
     
-    let storeBtn = UIButton(frame: CGRect(x: 60, y: 200, width: 100, height: 30))
-    storeBtn.setTitle("购买", for: .normal)
-    storeBtn.setTitleColor(UIColor.black, for: .normal)
-    storeBtn.addTarget(self, action: #selector(purchase), for: .touchUpInside)
-    storeBtn.backgroundColor = UIColor.white
-    view.addSubview(storeBtn)
+//    func poppverClick(btn:UIButton) {
+//        print("dainji")
+//        guard let popoverVC = menuVC.popoverPresentationController else {
+//            print("返回")
+//            return
+//            
+//        }
+//        popoverVC.backgroundColor = UIColor.white
+//        popoverVC.delegate = self
+//        popoverVC.sourceView = btn
+//        popoverVC.sourceRect = btn.bounds
+////        popoverVC.barButtonItem = UIBarButtonItem(customView: btn)
+//        present(menuVC, animated: true, completion: nil)
+//
+//
+//    }
     
-    }
+    
+    
     // 2，加载产品ID
     func getProducts() {
-        
+//        JJHUD.showLoading()
         let productIDs = Set(["com.cn.huizhijia.01"])
         let request = SKProductsRequest(productIdentifiers: productIDs)
         request.delegate = self
@@ -64,6 +126,8 @@ class SubViewController: UIViewController {
     }
     //5: 用户发起购买
     func purchase() {
+        print("购买")
+
 //        let transactions = SKPaymentQueue.default().transactions
 //        if (transactions.count > 0) {
 //            //检测是否有未完成的交易
@@ -80,17 +144,18 @@ class SubViewController: UIViewController {
             
             if SKPaymentQueue.canMakePayments() {//判断当前的支付环境, 是否可以支付
                 print("允许支付")
+//                JJHUD.showLoading(text: "购买...")
                 let payment = SKPayment(product: product)
                 SKPaymentQueue.default().add(payment)//添加到支付队列
 //                SKPaymentQueue.default().add(self)//监听交易状态
             }
         }
     }
-    // 回复购买
+    // 恢复购买
     func restoreClick() {
         print("恢复购买res")
         SKPaymentQueue.default().restoreCompletedTransactions()
-//        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(self)
         
     }
     
@@ -111,6 +176,14 @@ class SubViewController: UIViewController {
     
 }
 
+extension SubViewController:UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}
+
+
+
 
 extension SubViewController:SKPaymentTransactionObserver{
     // 6: 处理交易（交易结果）
@@ -123,16 +196,19 @@ extension SubViewController:SKPaymentTransactionObserver{
                 print("延迟处理")
             case .failed:
                 print("支付失败")
+//                JJHUD.hide()
                 handleFailedState(for: transaction, in: queue)
                 queue.finishTransaction(transaction)
             case .purchased:
                 print("支付成功")
+//                JJHUD.hide()
                 handlePurchasedState(for: transaction, in: queue)
                 queue.finishTransaction(transaction)
             case .purchasing:
                 print("正在支付")
             case .restored:
                 print("恢复购买")
+                handlePurchasedState(for: transaction, in: queue)
                 queue.finishTransaction(transaction)
             }
         }
@@ -147,9 +223,35 @@ extension SubViewController:SKPaymentTransactionObserver{
     func handleFailedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
         print("购买失败: \(transaction.payment.productIdentifier)")
     }
+    
+    
+
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        
+        let transactions = queue.transactions//SKPaymentQueue.default().transactions
+        let transaction = transactions.last
+        if transaction == nil {
+            print("返回")
+            
+            return
+        }
+        self.paymentQueue(SKPaymentQueue.default(), updatedTransactions: [transaction!])
+        handlePurchasedState(for: transaction!, in: queue)
+        
+    }
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+//        JJHUD.showLoading(text: "恢复购买失败")
+    }
 }
 
+
+
+
+
 extension SubViewController:SKProductsRequestDelegate {
+    
+    
     // 3,抓取产品信息（收到appleStore产品反馈信息）
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         // 产品标识符
@@ -172,6 +274,7 @@ extension SubViewController:SKProductsRequestDelegate {
             print("Product id: \(product.productIdentifier)");
             
         }
+//        JJHUD.hide()
     }
 }
 

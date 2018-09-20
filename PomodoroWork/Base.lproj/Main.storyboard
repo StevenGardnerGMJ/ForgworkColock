@@ -222,8 +222,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sB8-C2-RN3">
-                                                    <rect key="frame" x="340" y="11.999999999999998" width="19" height="20.333333333333332"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="1.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sB8-C2-RN3">
+                                                    <rect key="frame" x="337.33333333333331" y="11.999999999999998" width="21.666666666666668" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -260,7 +260,9 @@
         <scene sceneID="Hyd-PL-IJl">
             <objects>
                 <navigationController id="hFc-bC-hi0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="Settings" id="fwp-DC-kje"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="Settings" id="fwp-DC-kje">
+                        <color key="badgeColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3uw-0A-Cv1">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -417,7 +419,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU5-hK-C5f" userLabel="订阅">
-                                <rect key="frame" x="318" y="44" width="30" height="35"/>
+                                <rect key="frame" x="318" y="49" width="30" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Tca-PK-kKu"/>
                                     <constraint firstAttribute="width" constant="30" id="ipt-jl-HXz"/>
@@ -455,13 +457,15 @@
                             <constraint firstItem="10x-rw-YlH" firstAttribute="top" secondItem="1Cu-ST-6r1" secondAttribute="bottom" id="oq1-gr-eGq"/>
                             <constraint firstItem="Fdw-6I-SIe" firstAttribute="trailing" secondItem="oZt-Co-8p3" secondAttribute="trailing" constant="20" id="rF4-6y-xfd"/>
                             <constraint firstItem="saT-aI-Yem" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MN5-x7-88R" secondAttribute="leadingMargin" constant="20" id="sT4-ef-RNo"/>
-                            <constraint firstItem="bU5-hK-C5f" firstAttribute="top" secondItem="Fdw-6I-SIe" secondAttribute="top" id="u56-B3-dCy"/>
+                            <constraint firstItem="bU5-hK-C5f" firstAttribute="top" secondItem="Fdw-6I-SIe" secondAttribute="top" constant="5" id="u56-B3-dCy"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="10x-rw-YlH" secondAttribute="trailing" constant="20" id="veR-BT-2uj"/>
                             <constraint firstItem="dMR-1E-6rM" firstAttribute="trailing" secondItem="1Cu-ST-6r1" secondAttribute="trailing" id="w88-oE-P3Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fdw-6I-SIe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="计时" image="Timer-1" id="yHb-ZA-2ks"/>
+                    <tabBarItem key="tabBarItem" title="计时" image="Timer-1" id="yHb-ZA-2ks">
+                        <color key="badgeColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="ADWord" destination="DP1-f6-zbZ" id="Lyl-NJ-v8s"/>
                         <outlet property="buttonContainer" destination="10x-rw-YlH" id="kiw-UJ-Upo"/>
@@ -485,7 +489,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="gL8-aJ-y0M" kind="relationship" relationship="viewControllers" id="nO2-C1-m3M"/>
@@ -982,5 +987,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="93E-ez-vHE"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.35686275360000003" green="0.63529413940000001" blue="0.066666670139999995" alpha="1" colorSpace="calibratedRGB"/>
 </document>

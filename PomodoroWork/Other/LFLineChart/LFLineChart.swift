@@ -21,7 +21,7 @@ class LFLineChart: UIView {
     //MARK:  ---------- LineChar 界面 -------------------
     
     var xMarkTitles = Array<Any>()
-    var valueArray  = Array<Any>()
+    var valueArray  = Array<CGFloat>()
     
     var titleLab = UILabel()
     var scrollView = UIScrollView()
@@ -35,7 +35,7 @@ class LFLineChart: UIView {
     ///   - xMarkTitlesAndValues: 折线图显示的数据和X坐标轴刻度标签
     ///   - titleKey: 标签（如:9月1日）
     ///   - valueKey: 数据 (如:80)
-    func setXMarkTitlesAndValues(xMarkTitlesAndValues:Array<Dictionary<String, Any>>, titleKey:String, valueKey:String){
+    func setXMarkTitlesAndValues(xMarkTitlesAndValues:Array<Dictionary<String, CGFloat>>, titleKey:String, valueKey:String){
         
         self.xMarkTitlesAndValues = xMarkTitlesAndValues
         
@@ -51,16 +51,16 @@ class LFLineChart: UIView {
             valueArray.removeAll()
         }
         else {
-            valueArray = Array<Any>()
+            valueArray = Array<CGFloat>()
                 //[NSMutableArray arrayWithCapacity:0];
         }
         
         for dic in xMarkTitlesAndValues {
-            let titleKey_value = dic["\(titleKey)"] as! String
+            let titleKey_value = dic["\(titleKey)"]
             xMarkTitles.append(titleKey_value)
             //addObject:[dic objectForKey:titleKey]];
-            let valueKey_value = dic["\(valueKey)"] as! String
-            valueArray.append(valueKey_value)
+            let valueKey_value = dic["\(valueKey)"]
+            valueArray.append(valueKey_value!)
             //addObject:[dic objectForKey:valueKey]];
         }
         
@@ -115,10 +115,11 @@ class LFLineChart: UIView {
         self.chartLineView = LFChartLineView.init(frame: self.scrollView.bounds)
         //initWithFrame:self.scrollView.bounds];
         
-        self.chartLineView.yMarkTitles = self.yMarkTitles as NSArray;
+        self.chartLineView.yMarkTitles = yMarkTitles as NSArray;
         self.chartLineView.xMarkTitles = xMarkTitles as NSArray;
         self.chartLineView.xScaleMarkLEN = self.xScaleMarkLEN;
-        self.chartLineView.valueArray = valueArray as! [CGFloat]
+        // BUG
+        self.chartLineView.valueArray = valueArray
         self.chartLineView.maxValue = self.maxValue
         
         self.scrollView.addSubview(self.chartLineView)
@@ -128,7 +129,7 @@ class LFLineChart: UIView {
         //__block NSUInteger i = 0;
         // 2)遍历下标和元素 采用return 跳出
         for (index,value) in valueArray.enumerated() {
-            if ( (value as! String) == "-1") {
+            if ( value  == -1) {
                 i = index
                 return
             }

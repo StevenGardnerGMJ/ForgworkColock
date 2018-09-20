@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
 //        ADLaunchPage()// 广告
         registerNotifications()
-        configureTabBarColor()
-        IQkeyBoard()// 弹出键盘设置 
+//        configureTabBarColor()
+        IQkeyBoard()// 弹出键盘设置
         
         return true
     }
@@ -78,19 +78,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func resetBadgeNumber() {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
-    
+    // 配置tab Bar 颜色 禁用。。。2018年09月07日15:43:42
     fileprivate func configureTabBarColor() {
         UITabBar.appearance().tintColor = UIColor(
             red: 240/255.0, green: 90/255.0, blue: 90/255.0, alpha: 1)
     }
-    
+    // 登录 广告片
     fileprivate func ADLaunchPage() {
-        let adImageGifPath:String = Bundle.main.path(forResource: "ADP1", ofType: "png")!
+        // 做不一样的自己
+//        let adImageGifPath:String = Bundle.main.path(forResource: "ADP1", ofType: "png")!
         
-        HHLaunchAdPageHUD.init(frame: CGRect.init(x: 0, y: 0, width: HHScreenWidth, height: HHScreenHeight), aDduration: 4, aDImageUrl: adImageGifPath, hideSkipButton: false) {
+//        HHLaunchAdPageHUD.init(frame: CGRect.init(x: 0, y: 0, width: HHScreenWidth, height: HHScreenHeight), aDduration: 4, aDImageUrl: adImageGifPath, hideSkipButton: false) {
 //            print("[AppDelegate]:点了广告图片")
-            UIApplication.shared.openURL(URL.init(string: "http://www.bmw.com.cn/zh/all-models/m-series/m4-coupe/2017/m4-cs.html")!)
-          }
+//            UIApplication.shared.openURL(URL.init(string: "http://www.bmw.com.cn/zh/all-models/m-series/m4-coupe/2017/m4-cs.html")!)
+//          }
     }
     
     
