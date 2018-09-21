@@ -6,6 +6,5 @@
 3，自带气泡效果<br>
 4，长按计时时钟弹出身体记录器<br>
 
+![工作时钟](https://github.com/StevenGardnerGMJ/workColock/blob/master/PomodoroWork/Assets.xcassets/AppIcon.appiconset/workTimeriPhoneApp_60pt%402x.png)
 
-[![baidu]](http://baidu.com)  
-[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo" 
