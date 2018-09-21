@@ -8,4 +8,4 @@
 
 
 [![workcolock]](https://itunes.apple.com/us/app/itunes-u/id1378004614?action=write-review&mt=8)  
-[workcolock]:https://github.com/StevenGardnerGMJ/workColock/blob/master/PomodoroWork/Assets.xcassets/AppIcon.appiconset/workTimeriPhoneApp_60pt%402x.png
+[workcolock]:https://github.com/StevenGardnerGMJ/workColock/blob/master/PomodoroWork/Assets.xcassets/AppIcon.appiconset/workTimeriPhoneApp_60pt%402x.png "工作时钟"
