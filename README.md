@@ -67,12 +67,14 @@ ________________
 >>>>缩进四
 
 
-
+```swift
+ [![](图片所在网址)](链接网址) // GitHub图添超链接方法
+```
  [![premiere](http://www.xpgod.com/mac/uploadfile/2017/0809/20170809101428729.jpg)](https://blog.csdn.net/weixin_40194167/article/details/82148028)
 
 
 
-
+https://blog.csdn.net/ljc_563812704/article/details/53464039 
 
 
 
