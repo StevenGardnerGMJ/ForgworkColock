@@ -68,8 +68,7 @@ ________________
 
 
 
-[![baidu]](http://baidu.com)
-[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
+ [![premiere](http://www.xpgod.com/mac/uploadfile/2017/0809/20170809101428729.jpg)](https://blog.csdn.net/weixin_40194167/article/details/82148028)
 
 
 
