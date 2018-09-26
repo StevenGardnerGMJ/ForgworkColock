@@ -8,6 +8,13 @@
 
 ![工作时钟](https://github.com/StevenGardnerGMJ/workColock/blob/master/PomodoroWork/Assets.xcassets/AppIcon.appiconset/workTimeriPhoneApp_60pt%402x.png)
 
+
+GitHub 徽标的官方网站是 http://shields.io/ <br>
+GitHub 项目徽章的添加和设置 https://blog.csdn.net/eyrefree/article/details/71079790?utm_source=itdadao&utm_medium=referral
+
+
+
+
 大标题：代码截图A
 ====================
 ![代码截图](https://thumbnail0.baidupcs.com/thumbnail/e8a6e7f3d6c947631d7b5933e5b251b5?fid=1913173841-250528-978665268343321&time=1537840800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-f6Yzke9MMHoF4MfpT4zB0rzDKuY%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=6202702201150096397&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)
