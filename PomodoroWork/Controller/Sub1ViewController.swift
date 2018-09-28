@@ -27,7 +27,7 @@ class Sub1ViewController: SubViewController {
     func setView() {
         lineChart.frame = CGRect(x: 10, y: 80, width: view.bounds.width-20, height: view.bounds.height*3/5)
         lineChart.backgroundColor = UIColor.white
-        lineChart.title = "身体数据指标"
+        lineChart.title = "身体数据指标-体重"
         var orderArray = Array<Dictionary<String, CGFloat>>()
         var  max:CGFloat = 0
         for i in 0..<24 {
@@ -39,7 +39,7 @@ class Sub1ViewController: SubViewController {
             } else {
                 xValue = CGFloat(i) //  "\(i)" 11 12 ...
             }
-            yValue = CGFloat(arc4random() % 100) // y轴数值随机
+            yValue = CGFloat(arc4random() % 10+100 ) // y轴数值随机
             
             
             if yValue > max {
@@ -49,15 +49,16 @@ class Sub1ViewController: SubViewController {
             orderArray.append(dic)
         }
         
-        lineChart.maxValue = CGFloat(max)
+        lineChart.maxValue = CGFloat(max*7/5) // y轴最大值
         if max ==  0 {
             lineChart.maxValue = 5 // 给默认值
         }
-        lineChart.xScaleMarkLEN = 20// x轴间隔宽度
+        lineChart.xScaleMarkLEN = 50// x轴间隔宽度
+        
         
         
         // Y轴刻度标签
-        lineChart.yMarkTitles = ["0",String(format:"%.2f",max/5.0),String(format:"%.2f",max*2/5),String(format:"%.2f",max*3/5),String(format:"%.2f",max*4/5),String(format:"%.2f",max*5/5)]
+        lineChart.yMarkTitles = ["0",String(format:"%.2f",max/5.0),String(format:"%.2f",max*2/5),String(format:"%.2f",max*3/5),String(format:"%.2f",max*4/5),String(format:"%.2f",max*5/5),String(format:"%.2f",max*6/5),String(format:"%.2f",max*7/5)]
         
         // X轴刻度标签及相应的值
         lineChart.setXMarkTitlesAndValues(xMarkTitlesAndValues: orderArray as! Array<Dictionary<String, CGFloat>>, titleKey: "item", valueKey: "count")
@@ -66,9 +67,8 @@ class Sub1ViewController: SubViewController {
         view.addSubview(lineChart)
         
         //头顶上的时间标志
-        let unitLabel = UILabel(frame: CGRect(x: 20, y: 60, width: 100, height: 15))
-        
-        unitLabel.text = "电里"
+        let unitLabel = UILabel(frame: CGRect(x: 20, y: 90, width: 100, height: 15))
+        unitLabel.text = "HHmg"
         unitLabel.textColor = UIColor.lightGray
         unitLabel.font = UIFont.systemFont(ofSize: 15.0)
         view.addSubview(unitLabel)

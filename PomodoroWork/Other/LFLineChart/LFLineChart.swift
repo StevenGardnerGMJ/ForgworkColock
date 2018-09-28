@@ -143,13 +143,6 @@ class LFLineChart: UIView {
 //            }
 //        }
         
-        
-//        [valueArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            if ([obj isEqualToString:@"-1"]) {
-//            i = idx;
-//            *stop = YES;
-//            }
-//            }];
         if (i > 6) {
             let x = self.xScaleMarkLEN * (CGFloat(i) - 6)
             self.scrollView.contentOffset = CGPoint(x: x, y: 0)
