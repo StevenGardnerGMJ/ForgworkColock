@@ -11,7 +11,7 @@ import Foundation
 
 
 class TimerViewController: UIViewController {
-
+    
     @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var stopButton: UIButton!
@@ -50,7 +50,7 @@ class TimerViewController: UIViewController {
     fileprivate var pomodorosCompleted: Int!
     fileprivate var targetPomodoros: Int
     
-
+    
     
     // MARK: - Initialization
     
@@ -64,25 +64,25 @@ class TimerViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-
+        
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-NotificationCenter.default.addObserver(self,selector:#selector(willEnterForeground),name:NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
+        NotificationCenter.default.addObserver(self,selector:#selector(willEnterForeground),name: UIApplication.willEnterForegroundNotification,object: nil)
         
         buttonContainer.isHidden = true
         longPress() // 长按弹出记录界面
         setPoppverUI()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         willEnterForeground()
-    
+        
     }
     
     
@@ -92,11 +92,11 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         var comps: DateComponents = DateComponents()
         comps = calendar.dateComponents([.day, .weekday], from: Date())
         var   weekdayNow = comps.weekday! - 1
-
+        
         let temp = Int(arc4random()%13)
         weekdayNow = weekdayNow + temp
         
-//        print("星期\(weekdayNow)")
+        //        print("星期\(weekdayNow)")
         
         if weekdayNow <= 20 {
             ADWord.text = ADwordString[weekdayNow]
@@ -109,7 +109,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     }
     
     
-    func willEnterForeground() {
+    @objc func willEnterForeground() {
         //print("willEnterForeground called from controller")
         
         setCurrentTime()
@@ -122,13 +122,13 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         
         reloadData()
     }
-    func secondPassed() {
+    @objc func secondPassed() {
         if currentTime > 0 {
             currentTime = currentTime - 1.0
             updateTimerLabel()
             return
         }
-       // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
+        // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
         
         if pomodoro.state == .default {
             pomodoro.completePomodoro()
@@ -141,7 +141,7 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         
         stop()
         
-       // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
+        // print("State: \(pomodoro.state), done: \(pomodoro.pomodorosCompleted)")
     }
     
     let menuVC = SubViewController()//UIViewController()
@@ -178,16 +178,16 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
         menuVC.view.addSubview(storeBtn)
         
     }
-
+    
     
     // MARK: ----- 点击 -------
     
-    func restoreClick() {
+    @objc func restoreClick() {
         
         menuVC.restoreClick() // 体现MVVM设计模式
         
     }
-    func purchase() {
+    @objc func purchase() {
         menuVC.purchase()// 在VM中书写逻辑部分
     }
     
@@ -196,29 +196,29 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     @IBAction func subscribeClick(_ sender: UIButton) {
         
         print("subscribeClicK 订阅啊。。。")
-
-//        guard let popoverVC = menuVC.popoverPresentationController else {
-//            return
-//        }
-//
-//        popoverVC.backgroundColor = UIColor.white
-//        popoverVC.delegate = self
-//        popoverVC.sourceView = sender
-//        popoverVC.sourceRect = sender.bounds
-//        //        popoverVC.barButtonItem = UIBarButtonItem(customView: btn)
-//        present(menuVC, animated: true, completion: nil)
-
-//        let  subVC = SubViewController()
-//        subVC.getProducts()
-//        self.present(subVC, animated: true, completion: nil)
+        
+        //        guard let popoverVC = menuVC.popoverPresentationController else {
+        //            return
+        //        }
+        //
+        //        popoverVC.backgroundColor = UIColor.white
+        //        popoverVC.delegate = self
+        //        popoverVC.sourceView = sender
+        //        popoverVC.sourceRect = sender.bounds
+        //        //        popoverVC.barButtonItem = UIBarButtonItem(customView: btn)
+        //        present(menuVC, animated: true, completion: nil)
+        
+        //        let  subVC = SubViewController()
+        //        subVC.getProducts()
+        //        self.present(subVC, animated: true, completion: nil)
         
         let sub1VC = Sub1ViewController()
         self.present(sub1VC, animated: true, completion: nil)
         
         
         
-       
-    
+        
+        
     }
     
     @IBAction func togglePaused(_ sender: EmptyRoundedButton) {
@@ -346,18 +346,18 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
             self.buttonContainer.alpha = 0.0
         })
         
-        pauseButton.setTitle("暂停", for: UIControlState())
+        pauseButton.setTitle("暂停", for: UIControl.State())
     }
     fileprivate func animatePaused() {
-        pauseButton.setTitle("继续", for: UIControlState())
+        pauseButton.setTitle("继续", for: UIControl.State())
     }
     
     fileprivate func animateUnpaused() {
-        pauseButton.setTitle("暂停", for: UIControlState())
+        pauseButton.setTitle("暂停", for: UIControl.State())
     }
     
     fileprivate func longPress(){
-//        print("longpress")
+        //        print("longpress")
         timerLabel.isUserInteractionEnabled = true
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(TimerViewController.handleLongpressGesture))
         //长按时间为1秒
@@ -370,20 +370,20 @@ NotificationCenter.default.addObserver(self,selector:#selector(willEnterForegrou
     
     
     @objc fileprivate func handleLongpressGesture(sender : UILongPressGestureRecognizer){
-//        print("handleLongpressGesture")
+        //        print("handleLongpressGesture")
         
-        if sender.state == UIGestureRecognizerState.began{
+        if sender.state == UIGestureRecognizer.State.began{
             //
             let storyB = UIStoryboard(name: "Main", bundle: Bundle.main)
             let recordVC = storyB.instantiateViewController(withIdentifier: "recordTableViewController")
-//            self.navigationController?.present(recordVC, animated: true, completion: nil)
+            //            self.navigationController?.present(recordVC, animated: true, completion: nil)
             self.present(recordVC, animated: true, completion: nil)
             
             
         }
     }
     
-
+    
 }
 
 // 气泡 popoer 效果
@@ -408,7 +408,7 @@ extension TimerViewController: UICollectionViewDataSource, UICollectionViewDeleg
                         numberOfItemsInSection section: Int) -> Int {
         
         return numberOfRows(inSection: section)
-}
+    }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -418,23 +418,23 @@ extension TimerViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         return collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                   for: indexPath)
-}
-
-// MARK：--UICollectionViewDelegate协议
-
+    }
+    
+    // MARK：--UICollectionViewDelegate协议
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
         let bottomInset: CGFloat = 12
-        return UIEdgeInsetsMake(0, 0, bottomInset, 0)
-}
+        return UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+    }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
-}
-// MARK:-- 帮助
+    }
+    // MARK:-- 帮助
     fileprivate var rowsPerSection: Int {
         let cellWidth: CGFloat = 30.0
         let margin: CGFloat = 10.0
@@ -447,7 +447,7 @@ extension TimerViewController: UICollectionViewDataSource, UICollectionViewDeleg
         } else {
             return rowsPerSection
         }
-}
+    }
     fileprivate var numberOfRowsInLastSection: Int {
         if targetPomodoros % rowsPerSection == 0 {
             return rowsPerSection

@@ -8,8 +8,8 @@
 
 import UIKit
 
-private let delayTime : TimeInterval = 1.5
-private let padding : CGFloat = 12
+public  let  delayTime:TimeInterval = 1.5
+public  let padding : CGFloat      = 12
 private let cornerRadius : CGFloat = 13.0
 private let imageWidth_Height : CGFloat = 36
 
@@ -130,7 +130,7 @@ public class JJHUD:UIView {
     }
 
     private func addActivityView() {
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityView = UIActivityIndicatorView(style: .whiteLarge)
         activityView?.translatesAutoresizingMaskIntoConstraints = false
         activityView?.startAnimating()
         addSubview(activityView!)
@@ -255,16 +255,19 @@ extension String {
         var textSize:CGSize!
         if size.equalTo(CGSize.zero) {
             let attributes = NSDictionary(object: font,
-                                          forKey: NSFontAttributeName as NSCopying)
-            textSize = self.size(attributes: attributes as? [String : AnyObject])
+                                  forKey: NSAttributedString.Key.font as NSCopying)
+            textSize = self.size(withAttributes: attributes as? [NSAttributedString.Key : Any])
+            
+            
+//            textSize = self.size(attributes: attributes)//as? [String : AnyObject]
         } else {
             let option = NSStringDrawingOptions.usesLineFragmentOrigin
             let attributes = NSDictionary(object: font,
-                                          forKey: NSFontAttributeName as NSCopying)
+                                          forKey: NSAttributedString.Key.font as NSCopying)
 
             let stringRect = self.boundingRect(with: size,
                                                options: option,
-                                               attributes: attributes as? [String : AnyObject],
+                                               attributes: attributes as? [NSAttributedString.Key : Any],
                                                context: nil)
             textSize = stringRect.size
         }
@@ -410,7 +413,7 @@ extension UIView {
                                              attribute: .width,
                                              relatedBy: .equal,
                                              toItem: nil,
-                                             attribute: NSLayoutAttribute(rawValue: 0)!,
+                                             attribute: NSLayoutConstraint.Attribute(rawValue: 0)!,
                                              multiplier: 1,
                                              constant: width))
         }
@@ -419,7 +422,7 @@ extension UIView {
                                              attribute: .height,
                                              relatedBy: .equal,
                                              toItem: nil,
-                                             attribute: NSLayoutAttribute(rawValue: 0)!,
+                                             attribute: NSLayoutConstraint.Attribute(rawValue: 0)!,
                                              multiplier: 1,
                                              constant: height))
         }

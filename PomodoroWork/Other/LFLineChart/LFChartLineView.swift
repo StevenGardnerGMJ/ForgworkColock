@@ -69,9 +69,9 @@ class LFChartLineView: LFAxisView {
                 }
                 
                 let str =  String(format: "%0.2f", value)//NSString(string: "\(value)")
-       let strAttribute = [NSFontAttributeName:UIFont.systemFont(ofSize: 9.0)]
+                let strAttribute = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 9.0)]
                 
-                let size = str.size(attributes: strAttribute)
+                let size = str.size(withAttributes: strAttribute)
                 
                 let rect = CGRect(x: 0, y: 0, width: size.width, height: 10)
                 let textLabel = UILabel.init(frame: rect)

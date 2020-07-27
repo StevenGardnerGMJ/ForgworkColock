@@ -77,7 +77,7 @@ extension HHLaunchAdPageHUD {
             // 建议不这么做，而是让美工切图，底下那个图
             for dict : Dictionary <String, String> in imageArray as! Array {
                 
-                let imageSize = CGSizeFromString(dict["UILaunchImageSize"]!)
+                let imageSize = NSCoder.cgSize(for: dict["UILaunchImageSize"]!)
                 if imageSize.equalTo(viewSize) && viewOrientation == dict["UILaunchImageOrientation"]! as String {
                     let image = UIImage(named: dict["UILaunchImageName"]!)
                     return image

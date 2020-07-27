@@ -29,7 +29,8 @@ class Sub1ViewController: SubViewController {
         lineChart.backgroundColor = UIColor.white
         lineChart.title = "身体数据指标-体重"
         var orderArray = Array<Dictionary<String, CGFloat>>()
-        var  max:CGFloat = 0
+        var  max:CGFloat = 0 // 定义Y value 最大值
+        var  maxY:CGFloat = 0 // 定义 Y 坐标轴最大值
         for i in 0..<24 {
             var dic = Dictionary<String, CGFloat>()
             var xValue = CGFloat()
@@ -44,21 +45,28 @@ class Sub1ViewController: SubViewController {
             
             if yValue > max {
                 max = yValue
+                maxY = max*7/5 // Y 刻度轴多余显示效果更好
             }
             dic = ["item":xValue, "count":yValue]
             orderArray.append(dic)
         }
         
-        lineChart.maxValue = CGFloat(max*7/5) // y轴最大值
+        lineChart.maxValue = maxY // 刻度轴
         if max ==  0 {
             lineChart.maxValue = 5 // 给默认值
         }
         lineChart.xScaleMarkLEN = 50// x轴间隔宽度
         
         
-        
-        // Y轴刻度标签
-        lineChart.yMarkTitles = ["0",String(format:"%.2f",max/5.0),String(format:"%.2f",max*2/5),String(format:"%.2f",max*3/5),String(format:"%.2f",max*4/5),String(format:"%.2f",max*5/5),String(format:"%.2f",max*6/5),String(format:"%.2f",max*7/5)]
+        // Y轴刻度标签 0~~ 7/5 Y轴
+        lineChart.yMarkTitles = ["0",
+      String(format:"%.2f",max/5.0),
+      String(format:"%.2f",max*2/5),
+      String(format:"%.2f",max*3/5),
+      String(format:"%.2f",max*4/5),
+      String(format:"%.2f",max*5/5),
+      String(format:"%.2f",max*6/5),
+      String(format:"%.2f",max*7/5)]
         
         // X轴刻度标签及相应的值
         lineChart.setXMarkTitlesAndValues(xMarkTitlesAndValues: orderArray as! Array<Dictionary<String, CGFloat>>, titleKey: "item", valueKey: "count")
@@ -74,9 +82,6 @@ class Sub1ViewController: SubViewController {
         view.addSubview(unitLabel)
         
     }
-    
-
-    
     
 
 }

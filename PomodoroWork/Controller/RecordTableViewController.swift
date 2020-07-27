@@ -206,7 +206,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         animation.keyPath = "transform.scale"
         animation.values = [0, 0.2*force, -0.2*force, 0.2*force, 0]
         animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.duration = CFTimeInterval(1.0)
         animation.isAdditive = true
         animation.repeatCount = 2
@@ -220,7 +220,7 @@ class RecordTableViewController: UITableViewController,UITextFieldDelegate {
         UIView.animate(
             withDuration: duration,
             delay: 0,
-            options: UIViewAnimationOptions(),
+            options: UIView.AnimationOptions(),
             animations: {
                 animations()
         }, completion: nil

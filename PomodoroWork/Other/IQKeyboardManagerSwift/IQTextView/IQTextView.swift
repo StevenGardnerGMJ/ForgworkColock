@@ -29,17 +29,17 @@ open class IQTextView : UITextView {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
     }
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
     }
     
     override open func awakeFromNib() {
          super.awakeFromNib()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
     }
     
     deinit {
@@ -96,9 +96,9 @@ open class IQTextView : UITextView {
         }
     }
 
-    open func refreshPlaceholder() {
+ @objc open func refreshPlaceholder() {
         
-        if text.characters.count != 0 {
+        if text.count != 0 {
             placeholderLabel?.alpha = 0
         } else {
             placeholderLabel?.alpha = 1

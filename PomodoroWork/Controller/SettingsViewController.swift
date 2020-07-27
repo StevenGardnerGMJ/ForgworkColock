@@ -158,8 +158,8 @@ class SettingsViewController: UITableViewController, PickerViewControllerDelegat
     }
     // 对邮箱容错处理
     func showSendMailErrorAlert(){
-        let mailErrorAlert = UIAlertController(title: "无法发送", message: "陛下您的手机邮箱没有设置账户", preferredStyle: UIAlertControllerStyle.alert)
-        mailErrorAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: { _ in }))
+        let mailErrorAlert = UIAlertController(title: "无法发送", message: "陛下您的手机邮箱没有设置账户", preferredStyle: UIAlertController.Style.alert)
+        mailErrorAlert.addAction(UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler: { _ in }))
         self.present(mailErrorAlert, animated: true, completion: nil)
     }
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
